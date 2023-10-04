@@ -1,9 +1,18 @@
-# CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers.
+<div align="center">
+<h1>CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers</h1>
+</div>
 
+<p align="center">
+    <a href="https://arxiv.org/pdf/2305.17455.pdf">
+        <img alt="Paper" src="https://img.shields.io/badge/paper-link-blue?logo=quicklook" />
+    </a>
+    <a href="https://arxiv.org/abs/2305.17455">
+        <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-2301.13741-B31B1B?logo=arxiv" />
+    </a>
+    <a href="https://github.com/sdc17/CrossGET">
+        <img alt="Code" src="https://img.shields.io/badge/code-link-181717?logo=github" />
+    </a>
+</p>
 <img src="CrossGET.png" width="800">
 
-Official implementation of [CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers](https://arxiv.org/abs/2305.17455). Code will be released soon. Please stay tuned.
-
-### What's New 🥳
-
-* Jun 2023, we released the implementation, scripts, checkpoints, and logs of our ICML'23 paper [UPop: Unified and Progressive Pruning for Compressing Vision-Language Transformers](https://arxiv.org/abs/2301.13741). UPop enables effective structured pruning on various multi-modal and uni-modal tasks. [[Paper]](https://arxiv.org/pdf/2301.13741.pdf). [[Code]](https://github.com/sdc17/UPop). 🚩
+Official implementation of [CrossGET: Cross-Guided Ensemble of Tokens for Accelerating Vision-Language Transformers](https://arxiv.org/abs/2305.17455). Please stay tuned.
