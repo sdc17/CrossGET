@@ -9,19 +9,16 @@
     <a href="https://arxiv.org/abs/2305.17455">
         <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-2301.13741-B31B1B?logo=arxiv" />
     </a>
-    <a href="https://github.com/sdc17/CrossGET">
-        <img alt="Code" src="https://img.shields.io/badge/code-link-181717?logo=github" />
-    </a>
 </p>
 
 ## On LLaVA-1.5
 
 ### 🏃 Installation
-The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Please follow [LLaVA-1.5 repo](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install) to install other dependencies.
+The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Please follow [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install) to install other dependencies.
 
 ### 📑 Evaluation
 
-1. Download [playground/data](https://github.com/haotian-liu/LLaVA/tree/main/playground/data) from [LLaVA-1.5 repo](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
+1. Download [playground/data](https://github.com/haotian-liu/LLaVA/tree/main/playground/data) from [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
 2. Follow instructions [here](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md) for preparing datasets.
 3. Download following checkpoints and put them under `LLaVA/checkpoints/`.
 
@@ -44,9 +41,9 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
 
 ### 📚 Visual Instruction Tuning
 
-1. Download [playground/data](https://github.com/haotian-liu/LLaVA/tree/main/playground/data) from [LLaVA-1.5 repo](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
+1. Download [playground/data](https://github.com/haotian-liu/LLaVA/tree/main/playground/data) from [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
 2. Follow instructions [here](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#visual-instruction-tuning) for preparing datasets.
-3. Run `python LLaVA/scripts/construct_dataset.py` to create 'llava_v1_5_mix67k.json'.
+3. Run `python LLaVA/scripts/construct_dataset.py` to create `llava_v1_5_mix67k.json`.
 4. Follow instructions [here](https://github.com/haotian-liu/LLaVA/tree/main?tab=readme-ov-file#visual-instruction-tuning) for visual instruction tuning. For example, use [LLaVA/scripts/v1_5/finetune_task.sh](https://github.com/sdc17/CrossGET/blob/main/LLaVA/scripts/v1_5/finetune_task.sh)
 
     ```bash
