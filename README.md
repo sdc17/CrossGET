@@ -20,7 +20,7 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
 
 1. Download [playground/data](https://github.com/haotian-liu/LLaVA/tree/main/playground/data) from [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install).
 2. Follow instructions [here](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md) for preparing datasets.
-3. Download following checkpoints and put them under `LLaVA/checkpoints/`.
+3. Download following checkpoints and put them under `checkpoints/`.
 
     Model | Link | 
     --- | :---: 
@@ -85,8 +85,67 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
         --report_to wandb
     ```
 
+---
+
+## On CLIP
+
+### 🏃 Installation
+The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.16`. The dependencies can be installed by:
+```
+conda env create -f environment.yml
+```
+
+### 📑 Evaluation
+
+1. Download the [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/) dataset, unzip it under the `datasets` folder, and accordingly modify the `image_root` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
+2. Download annotations from [Google Drive](https://drive.google.com/uc?export=download&id=19Vk07K3DbQYa68DipJ4dFNcF0_Br7cmD) or [Baidu Drive](https://pan.baidu.com/s/1lJbfCsXqszmaTvxrpt7-xQ?pwd=1c2i), unzip it under the `annotation` folder, and accordingly modify the `annotation` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
+3. Download following checkpoints and put them under `output/`.
+
+    Model | Link | 
+    --- | :---: 
+    CLIP with CrossGET | [Google Drive](https://drive.google.com/drive/folders/1bc5ZCjSVRsOiir8wv672JxMHGQg5JwLD?usp=sharing)
+
+4. Use the following script to evaluate. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
+
+    ```bash
+    python -m torch.distributed.run --nproc_per_node=8 train_retrieval_clip.py \
+    --config ./configs/retrieval_flickr_clip.yaml --evaluate --reduce ours --rv 16 --rl 0 \
+    --pretrained output/train_retrieval_flickr_clip_ours/checkpoint_best.pth \
+    --output_dir output/evaluate_retrieval_flickr_clip_ours_test
+    ```
+
+    Image to Text (Flickr30k) | Recall@1 | Recall5 | Recall@10 
+    --- | :---: | :---: | :---: 
+    CLIP | 92.1 | 99.1 | 99.7 
+    w/ CrossGET (~1.6x Tput) | 92.1 | 99.7 | 99.8
+
+    Text to Image (Flickr30k) | Recall@1 | Recall5 | Recall@10 
+    --- | :---: | :---: | :---: 
+    CLIP | 79.3 | 95.7 | 98.0
+    w/ CrossGET (~1.6x Tput) | 79.6 | 95.7 | 98.0
+   
+
+### 📚 Fine-tuning
+
+1. Download the [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/) dataset, unzip it under the `datasets` folder, and accordingly modify the `image_root` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
+2. Download annotations from [Google Drive](https://drive.google.com/uc?export=download&id=19Vk07K3DbQYa68DipJ4dFNcF0_Br7cmD) or [Baidu Drive](https://pan.baidu.com/s/1lJbfCsXqszmaTvxrpt7-xQ?pwd=1c2i), unzip it under the `annotation` folder, and accordingly modify the `annotation` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
+3. Download following checkpoints and put them under `output/`.
+
+    Model | Link | 
+    --- | :---: 
+    CLIP | [Google Drive](https://drive.google.com/drive/folders/120n9RWZ0Ir8vzHP2Zd7b-6xJ-e5WxmFC?usp=sharing)
+   
+4. Use the following script to evaluate. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
+
+    ```bash
+    python -W ignore -m torch.distributed.run --nproc_per_node=8 train_retrieval_clip.py \
+    --config ./configs/retrieval_flickr_clip.yaml --lr 1e-5 --epoch 12 --reduce ours --rv 16 --rl 0 \
+    --pretrained output/finetune_retrieval_flickr_clip/checkpoint_best.pth \
+    --output_dir output/train_retrieval_flickr_clip_ours
+    ```
+    
 ## 💬 Acknowledgments
-This code is built upon <a href="https://github.com/haotian-liu/LLaVA">LLaVA</a> and <a href="https://github.com/facebookresearch/ToMe">ToMe</a>. Thanks for these awesome open-source projects!
+This code is built upon <a href="https://github.com/haotian-liu/LLaVA">LLaVA</a>, <a href="https://github.com/facebookresearch/ToMe">ToMe</a>, <a href="https://github.com/sdc17/UPop">UPop</a>, and <a href="https://github.com/salesforce/BLIP">BLIP</a>. Thanks for these awesome open-source projects!
 
 
 ## ✨ Citation
