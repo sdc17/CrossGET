@@ -312,7 +312,7 @@ if __name__ == '__main__':
     parser.add_argument('--lr', default=1e-6, type=float, help='learning rate')
     parser.add_argument('--epoch', default=12, type=int, help='number of epoches')
     parser.add_argument('--pretrained', default='output/finetune_retrieval_flickr_clip/checkpoint_best.pth', type=str)
-    parser.add_argument('--reduce', default='ours', type=str, choices=['none', 'baseline', 'ours', 'trips'])
+    parser.add_argument('--reduce', default='ours', type=str, choices=['none', 'ours'])
     parser.add_argument('--rv', default=16, type=int)
     parser.add_argument('--rl', default=0, type=int)
     
