@@ -1,0 +1,526 @@
+| distributed init (rank 3, word 8): env://
+| distributed init (rank 5, word 8): env://
+| distributed init (rank 2, word 8): env://
+| distributed init (rank 1, word 8): env://
+| distributed init (rank 7, word 8): env://
+| distributed init (rank 6, word 8): env://
+| distributed init (rank 0, word 8): env://
+| distributed init (rank 4, word 8): env://
+Creating retrieval dataset
+Using downloaded and verified file: annotation/flickr30k_train.json
+Using downloaded and verified file: annotation/flickr30k_val.json
+Using downloaded and verified file: annotation/flickr30k_test.json
+Creating model
+| module                                                     | #parameters or shape   | #flops        |
+|:-----------------------------------------------------------|:-----------------------|:--------------|
+| model                                                      | 149.621M               | 20.567G       |
+|  positional_embedding                                      |  (77, 512)             |               |
+|  text_projection                                           |  (512, 512)            |               |
+|  logit_scale                                               |  ()                    |               |
+|  visual                                                    |  86.193M               |  17.582G      |
+|   visual.class_embedding                                   |   (768,)               |               |
+|   visual.positional_embedding                              |   (197, 768)           |               |
+|   visual.proj                                              |   (768, 512)           |               |
+|   visual.conv1                                             |   0.59M                |   115.606M    |
+|    visual.conv1.weight                                     |    (768, 3, 16, 16)    |               |
+|   visual.ln_pre                                            |   1.536K               |   0.756M      |
+|    visual.ln_pre.weight                                    |    (768,)              |               |
+|    visual.ln_pre.bias                                      |    (768,)              |               |
+|   visual.transformer.resblocks                             |   85.054M              |   17.466G     |
+|    visual.transformer.resblocks.0                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.0.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.0.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.0.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.0.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.0.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.0.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.0.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.0.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.0.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.0.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.0.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.0.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.0.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.0.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.0.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.0.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.0.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.0.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.0.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.1                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.1.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.1.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.1.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.1.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.1.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.1.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.1.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.1.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.1.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.1.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.1.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.1.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.1.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.1.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.1.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.1.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.1.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.1.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.1.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.2                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.2.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.2.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.2.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.2.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.2.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.2.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.2.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.2.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.2.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.2.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.2.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.2.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.2.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.2.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.2.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.2.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.2.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.2.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.2.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.3                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.3.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.3.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.3.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.3.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.3.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.3.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.3.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.3.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.3.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.3.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.3.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.3.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.3.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.3.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.3.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.3.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.3.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.3.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.3.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.4                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.4.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.4.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.4.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.4.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.4.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.4.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.4.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.4.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.4.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.4.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.4.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.4.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.4.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.4.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.4.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.4.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.4.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.4.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.4.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.5                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.5.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.5.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.5.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.5.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.5.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.5.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.5.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.5.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.5.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.5.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.5.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.5.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.5.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.5.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.5.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.5.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.5.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.5.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.5.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.6                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.6.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.6.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.6.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.6.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.6.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.6.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.6.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.6.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.6.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.6.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.6.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.6.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.6.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.6.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.6.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.6.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.6.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.6.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.6.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.7                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.7.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.7.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.7.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.7.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.7.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.7.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.7.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.7.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.7.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.7.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.7.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.7.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.7.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.7.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.7.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.7.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.7.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.7.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.7.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.8                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.8.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.8.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.8.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.8.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.8.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.8.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.8.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.8.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.8.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.8.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.8.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.8.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.8.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.8.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.8.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.8.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.8.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.8.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.8.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.9                          |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.9.attn                    |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.9.attn.in_proj_weight    |      (2304, 768)       |               |
+|      visual.transformer.resblocks.9.attn.in_proj_bias      |      (2304,)           |               |
+|      visual.transformer.resblocks.9.attn.out_proj          |      0.591M            |               |
+|       visual.transformer.resblocks.9.attn.out_proj.weight  |       (768, 768)       |               |
+|       visual.transformer.resblocks.9.attn.out_proj.bias    |       (768,)           |               |
+|     visual.transformer.resblocks.9.ln_1                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.9.ln_1.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.9.ln_1.bias              |      (768,)            |               |
+|     visual.transformer.resblocks.9.mlp                     |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.9.mlp.c_fc               |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.9.mlp.c_fc.weight       |       (3072, 768)      |               |
+|       visual.transformer.resblocks.9.mlp.c_fc.bias         |       (3072,)          |               |
+|      visual.transformer.resblocks.9.mlp.c_proj             |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.9.mlp.c_proj.weight     |       (768, 3072)      |               |
+|       visual.transformer.resblocks.9.mlp.c_proj.bias       |       (768,)           |               |
+|     visual.transformer.resblocks.9.ln_2                    |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.9.ln_2.weight            |      (768,)            |               |
+|      visual.transformer.resblocks.9.ln_2.bias              |      (768,)            |               |
+|    visual.transformer.resblocks.10                         |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.10.attn                   |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.10.attn.in_proj_weight   |      (2304, 768)       |               |
+|      visual.transformer.resblocks.10.attn.in_proj_bias     |      (2304,)           |               |
+|      visual.transformer.resblocks.10.attn.out_proj         |      0.591M            |               |
+|       visual.transformer.resblocks.10.attn.out_proj.weight |       (768, 768)       |               |
+|       visual.transformer.resblocks.10.attn.out_proj.bias   |       (768,)           |               |
+|     visual.transformer.resblocks.10.ln_1                   |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.10.ln_1.weight           |      (768,)            |               |
+|      visual.transformer.resblocks.10.ln_1.bias             |      (768,)            |               |
+|     visual.transformer.resblocks.10.mlp                    |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.10.mlp.c_fc              |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.10.mlp.c_fc.weight      |       (3072, 768)      |               |
+|       visual.transformer.resblocks.10.mlp.c_fc.bias        |       (3072,)          |               |
+|      visual.transformer.resblocks.10.mlp.c_proj            |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.10.mlp.c_proj.weight    |       (768, 3072)      |               |
+|       visual.transformer.resblocks.10.mlp.c_proj.bias      |       (768,)           |               |
+|     visual.transformer.resblocks.10.ln_2                   |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.10.ln_2.weight           |      (768,)            |               |
+|      visual.transformer.resblocks.10.ln_2.bias             |      (768,)            |               |
+|    visual.transformer.resblocks.11                         |    7.088M              |    1.455G     |
+|     visual.transformer.resblocks.11.attn                   |     2.362M             |     524.392M  |
+|      visual.transformer.resblocks.11.attn.in_proj_weight   |      (2304, 768)       |               |
+|      visual.transformer.resblocks.11.attn.in_proj_bias     |      (2304,)           |               |
+|      visual.transformer.resblocks.11.attn.out_proj         |      0.591M            |               |
+|       visual.transformer.resblocks.11.attn.out_proj.weight |       (768, 768)       |               |
+|       visual.transformer.resblocks.11.attn.out_proj.bias   |       (768,)           |               |
+|     visual.transformer.resblocks.11.ln_1                   |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.11.ln_1.weight           |      (768,)            |               |
+|      visual.transformer.resblocks.11.ln_1.bias             |      (768,)            |               |
+|     visual.transformer.resblocks.11.mlp                    |     4.722M             |     929.563M  |
+|      visual.transformer.resblocks.11.mlp.c_fc              |      2.362M            |      464.781M |
+|       visual.transformer.resblocks.11.mlp.c_fc.weight      |       (3072, 768)      |               |
+|       visual.transformer.resblocks.11.mlp.c_fc.bias        |       (3072,)          |               |
+|      visual.transformer.resblocks.11.mlp.c_proj            |      2.36M             |      464.781M |
+|       visual.transformer.resblocks.11.mlp.c_proj.weight    |       (768, 3072)      |               |
+|       visual.transformer.resblocks.11.mlp.c_proj.bias      |       (768,)           |               |
+|     visual.transformer.resblocks.11.ln_2                   |     1.536K             |     0.756M    |
+|      visual.transformer.resblocks.11.ln_2.weight           |      (768,)            |               |
+|      visual.transformer.resblocks.11.ln_2.bias             |      (768,)            |               |
+|   visual.ln_post                                           |   1.536K               |   3.84K       |
+|    visual.ln_post.weight                                   |    (768,)              |               |
+|    visual.ln_post.bias                                     |    (768,)              |               |
+|  transformer.resblocks                                     |  37.829M               |  2.984G       |
+|   transformer.resblocks.0                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.0.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.0.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.0.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.0.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.0.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.0.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.0.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.0.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.0.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.0.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.0.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.0.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.0.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.0.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.0.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.0.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.0.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.0.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.0.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.1                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.1.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.1.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.1.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.1.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.1.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.1.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.1.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.1.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.1.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.1.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.1.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.1.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.1.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.1.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.1.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.1.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.1.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.1.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.1.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.2                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.2.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.2.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.2.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.2.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.2.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.2.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.2.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.2.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.2.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.2.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.2.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.2.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.2.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.2.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.2.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.2.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.2.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.2.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.2.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.3                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.3.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.3.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.3.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.3.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.3.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.3.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.3.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.3.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.3.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.3.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.3.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.3.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.3.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.3.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.3.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.3.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.3.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.3.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.3.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.4                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.4.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.4.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.4.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.4.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.4.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.4.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.4.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.4.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.4.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.4.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.4.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.4.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.4.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.4.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.4.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.4.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.4.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.4.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.4.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.5                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.5.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.5.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.5.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.5.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.5.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.5.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.5.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.5.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.5.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.5.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.5.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.5.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.5.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.5.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.5.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.5.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.5.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.5.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.5.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.6                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.6.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.6.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.6.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.6.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.6.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.6.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.6.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.6.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.6.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.6.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.6.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.6.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.6.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.6.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.6.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.6.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.6.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.6.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.6.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.7                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.7.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.7.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.7.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.7.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.7.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.7.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.7.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.7.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.7.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.7.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.7.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.7.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.7.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.7.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.7.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.7.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.7.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.7.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.7.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.8                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.8.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.8.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.8.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.8.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.8.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.8.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.8.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.8.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.8.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.8.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.8.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.8.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.8.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.8.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.8.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.8.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.8.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.8.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.8.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.9                                  |   3.152M               |   248.687M    |
+|    transformer.resblocks.9.attn                            |    1.051M              |    86.812M    |
+|     transformer.resblocks.9.attn.in_proj_weight            |     (1536, 512)        |               |
+|     transformer.resblocks.9.attn.in_proj_bias              |     (1536,)            |               |
+|     transformer.resblocks.9.attn.out_proj                  |     0.263M             |               |
+|      transformer.resblocks.9.attn.out_proj.weight          |      (512, 512)        |               |
+|      transformer.resblocks.9.attn.out_proj.bias            |      (512,)            |               |
+|    transformer.resblocks.9.ln_1                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.9.ln_1.weight                    |     (512,)             |               |
+|     transformer.resblocks.9.ln_1.bias                      |     (512,)             |               |
+|    transformer.resblocks.9.mlp                             |    2.1M                |    161.481M   |
+|     transformer.resblocks.9.mlp.c_fc                       |     1.051M             |     80.74M    |
+|      transformer.resblocks.9.mlp.c_fc.weight               |      (2048, 512)       |               |
+|      transformer.resblocks.9.mlp.c_fc.bias                 |      (2048,)           |               |
+|     transformer.resblocks.9.mlp.c_proj                     |     1.049M             |     80.74M    |
+|      transformer.resblocks.9.mlp.c_proj.weight             |      (512, 2048)       |               |
+|      transformer.resblocks.9.mlp.c_proj.bias               |      (512,)            |               |
+|    transformer.resblocks.9.ln_2                            |    1.024K              |    0.197M     |
+|     transformer.resblocks.9.ln_2.weight                    |     (512,)             |               |
+|     transformer.resblocks.9.ln_2.bias                      |     (512,)             |               |
+|   transformer.resblocks.10                                 |   3.152M               |   248.687M    |
+|    transformer.resblocks.10.attn                           |    1.051M              |    86.812M    |
+|     transformer.resblocks.10.attn.in_proj_weight           |     (1536, 512)        |               |
+|     transformer.resblocks.10.attn.in_proj_bias             |     (1536,)            |               |
+|     transformer.resblocks.10.attn.out_proj                 |     0.263M             |               |
+|      transformer.resblocks.10.attn.out_proj.weight         |      (512, 512)        |               |
+|      transformer.resblocks.10.attn.out_proj.bias           |      (512,)            |               |
+|    transformer.resblocks.10.ln_1                           |    1.024K              |    0.197M     |
+|     transformer.resblocks.10.ln_1.weight                   |     (512,)             |               |
+|     transformer.resblocks.10.ln_1.bias                     |     (512,)             |               |
+|    transformer.resblocks.10.mlp                            |    2.1M                |    161.481M   |
+|     transformer.resblocks.10.mlp.c_fc                      |     1.051M             |     80.74M    |
+|      transformer.resblocks.10.mlp.c_fc.weight              |      (2048, 512)       |               |
+|      transformer.resblocks.10.mlp.c_fc.bias                |      (2048,)           |               |
+|     transformer.resblocks.10.mlp.c_proj                    |     1.049M             |     80.74M    |
+|      transformer.resblocks.10.mlp.c_proj.weight            |      (512, 2048)       |               |
+|      transformer.resblocks.10.mlp.c_proj.bias              |      (512,)            |               |
+|    transformer.resblocks.10.ln_2                           |    1.024K              |    0.197M     |
+|     transformer.resblocks.10.ln_2.weight                   |     (512,)             |               |
+|     transformer.resblocks.10.ln_2.bias                     |     (512,)             |               |
+|   transformer.resblocks.11                                 |   3.152M               |   248.687M    |
+|    transformer.resblocks.11.attn                           |    1.051M              |    86.812M    |
+|     transformer.resblocks.11.attn.in_proj_weight           |     (1536, 512)        |               |
+|     transformer.resblocks.11.attn.in_proj_bias             |     (1536,)            |               |
+|     transformer.resblocks.11.attn.out_proj                 |     0.263M             |               |
+|      transformer.resblocks.11.attn.out_proj.weight         |      (512, 512)        |               |
+|      transformer.resblocks.11.attn.out_proj.bias           |      (512,)            |               |
+|    transformer.resblocks.11.ln_1                           |    1.024K              |    0.197M     |
+|     transformer.resblocks.11.ln_1.weight                   |     (512,)             |               |
+|     transformer.resblocks.11.ln_1.bias                     |     (512,)             |               |
+|    transformer.resblocks.11.mlp                            |    2.1M                |    161.481M   |
+|     transformer.resblocks.11.mlp.c_fc                      |     1.051M             |     80.74M    |
+|      transformer.resblocks.11.mlp.c_fc.weight              |      (2048, 512)       |               |
+|      transformer.resblocks.11.mlp.c_fc.bias                |      (2048,)           |               |
+|     transformer.resblocks.11.mlp.c_proj                    |     1.049M             |     80.74M    |
+|      transformer.resblocks.11.mlp.c_proj.weight            |      (512, 2048)       |               |
+|      transformer.resblocks.11.mlp.c_proj.bias              |      (512,)            |               |
+|    transformer.resblocks.11.ln_2                           |    1.024K              |    0.197M     |
+|     transformer.resblocks.11.ln_2.weight                   |     (512,)             |               |
+|     transformer.resblocks.11.ln_2.bias                     |     (512,)             |               |
+|  token_embedding                                           |  25.297M               |  0            |
+|   token_embedding.weight                                   |   (49408, 512)         |               |
+|  ln_final                                                  |  1.024K                |  0.197M       |
+|   ln_final.weight                                          |   (512,)               |               |
+|   ln_final.bias                                            |   (512,)               |               |
+Total 20.56706816
+Start training
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 92.89940828402366, 'txt_r5': 99.40828402366864, 'txt_r10': 99.90138067061145, 'txt_r_mean': 97.40302432610126, 'img_r1': 79.76331360946746, 'img_r5': 94.97041420118343, 'img_r10': 97.98816568047337, 'img_r_mean': 90.90729783037476, 'r_mean': 94.15516107823801}
+{'txt_r1': 92.1, 'txt_r5': 99.1, 'txt_r10': 99.7, 'txt_r_mean': 96.96666666666665, 'img_r1': 79.26, 'img_r5': 95.68, 'img_r10': 98.02, 'img_r_mean': 90.98666666666666, 'r_mean': 93.97666666666666}
+LOG:  {'val_txt_r1': 92.89940828402366, 'val_txt_r5': 99.40828402366864, 'val_txt_r10': 99.90138067061145, 'val_txt_r_mean': 97.40302432610126, 'val_img_r1': 79.76331360946746, 'val_img_r5': 94.97041420118343, 'val_img_r10': 97.98816568047337, 'val_img_r_mean': 90.90729783037476, 'val_r_mean': 94.15516107823801, 'test_txt_r1': 92.1, 'test_txt_r5': 99.1, 'test_txt_r10': 99.7, 'test_txt_r_mean': 96.96666666666665, 'test_img_r1': 79.26, 'test_img_r5': 95.68, 'test_img_r10': 98.02, 'test_img_r_mean': 90.98666666666666, 'test_r_mean': 93.97666666666666}
+Training time 0:00:27

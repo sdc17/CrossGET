@@ -1,0 +1,700 @@
+| distributed init (rank 2, word 8): env://
+| distributed init (rank 3, word 8): env://
+| distributed init (rank 0, word 8): env://
+| distributed init (rank 4, word 8): env://
+| distributed init (rank 5, word 8): env://
+| distributed init (rank 1, word 8): env://
+| distributed init (rank 6, word 8): env://
+| distributed init (rank 7, word 8): env://
+Creating retrieval dataset
+Using downloaded and verified file: annotation/flickr30k_train.json
+Using downloaded and verified file: annotation/flickr30k_val.json
+Using downloaded and verified file: annotation/flickr30k_test.json
+Creating model
+| module                                                      | #parameters or shape   | #flops         |
+|:------------------------------------------------------------|:-----------------------|:---------------|
+| model                                                       | 149.636M               | 12.036G        |
+|  positional_embedding                                       |  (77, 512)             |                |
+|  text_projection                                            |  (512, 512)            |                |
+|  logit_scale                                                |  ()                    |                |
+|  visual                                                     |  86.202M               |  9.011G        |
+|   visual.class_embedding                                    |   (768,)               |                |
+|   visual.positional_embedding                               |   (197, 768)           |                |
+|   visual.proj                                               |   (768, 512)           |                |
+|   visual.conv1                                              |   0.59M                |   115.606M     |
+|    visual.conv1.weight                                      |    (768, 3, 16, 16)    |                |
+|   visual.ln_pre                                             |   1.536K               |   0.76M        |
+|    visual.ln_pre.weight                                     |    (768,)              |                |
+|    visual.ln_pre.bias                                       |    (768,)              |                |
+|   visual.transformer                                        |   85.064M              |   8.894G       |
+|    visual.transformer.cross_image                           |    (1, 12, 768)        |                |
+|    visual.transformer.resblocks                             |    85.054M             |    8.894G      |
+|     visual.transformer.resblocks.0                          |     7.088M             |     1.418G     |
+|      visual.transformer.resblocks.0.attn                    |      2.362M            |      527.358M  |
+|       visual.transformer.resblocks.0.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.0.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.0.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.0.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.0.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.0.ln_1                    |      1.536K            |      0.76M     |
+|       visual.transformer.resblocks.0.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.0.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.0.mlp                     |      4.722M            |      858.784M  |
+|       visual.transformer.resblocks.0.mlp.c_fc               |       2.362M           |       429.392M |
+|        visual.transformer.resblocks.0.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.0.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.0.mlp.c_proj             |       2.36M            |       429.392M |
+|        visual.transformer.resblocks.0.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.0.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.0.ln_2                    |      1.536K            |      0.699M    |
+|       visual.transformer.resblocks.0.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.0.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.0.token_reducer           |                        |      30.261M   |
+|     visual.transformer.resblocks.1                          |     7.088M             |     1.29G      |
+|      visual.transformer.resblocks.1.attn                    |      2.362M            |      480.27M   |
+|       visual.transformer.resblocks.1.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.1.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.1.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.1.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.1.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.1.ln_1                    |      1.536K            |      0.699M    |
+|       visual.transformer.resblocks.1.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.1.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.1.mlp                     |      4.722M            |      783.286M  |
+|       visual.transformer.resblocks.1.mlp.c_fc               |       2.362M           |       391.643M |
+|        visual.transformer.resblocks.1.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.1.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.1.mlp.c_proj             |       2.36M            |       391.643M |
+|        visual.transformer.resblocks.1.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.1.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.1.ln_2                    |      1.536K            |      0.637M    |
+|       visual.transformer.resblocks.1.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.1.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.1.token_reducer           |                        |      25.579M   |
+|     visual.transformer.resblocks.2                          |     7.088M             |     1.164G     |
+|      visual.transformer.resblocks.2.attn                    |      2.362M            |      433.969M  |
+|       visual.transformer.resblocks.2.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.2.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.2.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.2.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.2.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.2.ln_1                    |      1.536K            |      0.637M    |
+|       visual.transformer.resblocks.2.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.2.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.2.mlp                     |      4.722M            |      707.789M  |
+|       visual.transformer.resblocks.2.mlp.c_fc               |       2.362M           |       353.894M |
+|        visual.transformer.resblocks.2.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.2.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.2.mlp.c_proj             |       2.36M            |       353.894M |
+|        visual.transformer.resblocks.2.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.2.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.2.ln_2                    |      1.536K            |      0.576M    |
+|       visual.transformer.resblocks.2.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.2.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.2.token_reducer           |                        |      21.29M    |
+|     visual.transformer.resblocks.3                          |     7.088M             |     1.039G     |
+|      visual.transformer.resblocks.3.attn                    |      2.362M            |      388.454M  |
+|       visual.transformer.resblocks.3.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.3.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.3.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.3.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.3.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.3.ln_1                    |      1.536K            |      0.576M    |
+|       visual.transformer.resblocks.3.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.3.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.3.mlp                     |      4.722M            |      632.291M  |
+|       visual.transformer.resblocks.3.mlp.c_fc               |       2.362M           |       316.146M |
+|        visual.transformer.resblocks.3.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.3.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.3.mlp.c_proj             |       2.36M            |       316.146M |
+|        visual.transformer.resblocks.3.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.3.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.3.ln_2                    |      1.536K            |      0.515M    |
+|       visual.transformer.resblocks.3.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.3.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.3.token_reducer           |                        |      17.395M   |
+|     visual.transformer.resblocks.4                          |     7.088M             |     915.381M   |
+|      visual.transformer.resblocks.4.attn                    |      2.362M            |      343.726M  |
+|       visual.transformer.resblocks.4.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.4.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.4.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.4.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.4.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.4.ln_1                    |      1.536K            |      0.515M    |
+|       visual.transformer.resblocks.4.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.4.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.4.mlp                     |      4.722M            |      556.794M  |
+|       visual.transformer.resblocks.4.mlp.c_fc               |       2.362M           |       278.397M |
+|        visual.transformer.resblocks.4.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.4.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.4.mlp.c_proj             |       2.36M            |       278.397M |
+|        visual.transformer.resblocks.4.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.4.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.4.ln_2                    |      1.536K            |      0.453M    |
+|       visual.transformer.resblocks.4.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.4.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.4.token_reducer           |                        |      13.893M   |
+|     visual.transformer.resblocks.5                          |     7.088M             |     792.71M    |
+|      visual.transformer.resblocks.5.attn                    |      2.362M            |      299.784M  |
+|       visual.transformer.resblocks.5.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.5.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.5.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.5.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.5.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.5.ln_1                    |      1.536K            |      0.453M    |
+|       visual.transformer.resblocks.5.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.5.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.5.mlp                     |      4.722M            |      481.296M  |
+|       visual.transformer.resblocks.5.mlp.c_fc               |       2.362M           |       240.648M |
+|        visual.transformer.resblocks.5.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.5.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.5.mlp.c_proj             |       2.36M            |       240.648M |
+|        visual.transformer.resblocks.5.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.5.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.5.ln_2                    |      1.536K            |      0.392M    |
+|       visual.transformer.resblocks.5.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.5.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.5.token_reducer           |                        |      10.784M   |
+|     visual.transformer.resblocks.6                          |     7.088M             |     671.218M   |
+|      visual.transformer.resblocks.6.attn                    |      2.362M            |      256.629M  |
+|       visual.transformer.resblocks.6.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.6.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.6.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.6.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.6.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.6.ln_1                    |      1.536K            |      0.392M    |
+|       visual.transformer.resblocks.6.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.6.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.6.mlp                     |      4.722M            |      405.799M  |
+|       visual.transformer.resblocks.6.mlp.c_fc               |       2.362M           |       202.899M |
+|        visual.transformer.resblocks.6.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.6.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.6.mlp.c_proj             |       2.36M            |       202.899M |
+|        visual.transformer.resblocks.6.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.6.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.6.ln_2                    |      1.536K            |      0.33M     |
+|       visual.transformer.resblocks.6.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.6.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.6.token_reducer           |                        |      8.069M    |
+|     visual.transformer.resblocks.7                          |     7.088M             |     550.906M   |
+|      visual.transformer.resblocks.7.attn                    |      2.362M            |      214.26M   |
+|       visual.transformer.resblocks.7.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.7.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.7.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.7.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.7.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.7.ln_1                    |      1.536K            |      0.33M     |
+|       visual.transformer.resblocks.7.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.7.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.7.mlp                     |      4.722M            |      330.301M  |
+|       visual.transformer.resblocks.7.mlp.c_fc               |       2.362M           |       165.151M |
+|        visual.transformer.resblocks.7.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.7.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.7.mlp.c_proj             |       2.36M            |       165.151M |
+|        visual.transformer.resblocks.7.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.7.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.7.ln_2                    |      1.536K            |      0.269M    |
+|       visual.transformer.resblocks.7.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.7.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.7.token_reducer           |                        |      5.746M    |
+|     visual.transformer.resblocks.8                          |     7.088M             |     431.774M   |
+|      visual.transformer.resblocks.8.attn                    |      2.362M            |      172.677M  |
+|       visual.transformer.resblocks.8.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.8.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.8.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.8.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.8.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.8.ln_1                    |      1.536K            |      0.269M    |
+|       visual.transformer.resblocks.8.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.8.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.8.mlp                     |      4.722M            |      254.804M  |
+|       visual.transformer.resblocks.8.mlp.c_fc               |       2.362M           |       127.402M |
+|        visual.transformer.resblocks.8.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.8.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.8.mlp.c_proj             |       2.36M            |       127.402M |
+|        visual.transformer.resblocks.8.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.8.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.8.ln_2                    |      1.536K            |      0.207M    |
+|       visual.transformer.resblocks.8.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.8.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.8.token_reducer           |                        |      3.817M    |
+|     visual.transformer.resblocks.9                          |     7.088M             |     313.822M   |
+|      visual.transformer.resblocks.9.attn                    |      2.362M            |      131.881M  |
+|       visual.transformer.resblocks.9.attn.in_proj_weight    |       (2304, 768)      |                |
+|       visual.transformer.resblocks.9.attn.in_proj_bias      |       (2304,)          |                |
+|       visual.transformer.resblocks.9.attn.out_proj          |       0.591M           |                |
+|        visual.transformer.resblocks.9.attn.out_proj.weight  |        (768, 768)      |                |
+|        visual.transformer.resblocks.9.attn.out_proj.bias    |        (768,)          |                |
+|      visual.transformer.resblocks.9.ln_1                    |      1.536K            |      0.207M    |
+|       visual.transformer.resblocks.9.ln_1.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.9.ln_1.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.9.mlp                     |      4.722M            |      179.306M  |
+|       visual.transformer.resblocks.9.mlp.c_fc               |       2.362M           |       89.653M  |
+|        visual.transformer.resblocks.9.mlp.c_fc.weight       |        (3072, 768)     |                |
+|        visual.transformer.resblocks.9.mlp.c_fc.bias         |        (3072,)         |                |
+|       visual.transformer.resblocks.9.mlp.c_proj             |       2.36M            |       89.653M  |
+|        visual.transformer.resblocks.9.mlp.c_proj.weight     |        (768, 3072)     |                |
+|        visual.transformer.resblocks.9.mlp.c_proj.bias       |        (768,)          |                |
+|      visual.transformer.resblocks.9.ln_2                    |      1.536K            |      0.146M    |
+|       visual.transformer.resblocks.9.ln_2.weight            |       (768,)           |                |
+|       visual.transformer.resblocks.9.ln_2.bias              |       (768,)           |                |
+|      visual.transformer.resblocks.9.token_reducer           |                        |      2.281M    |
+|     visual.transformer.resblocks.10                         |     7.088M             |     197.049M   |
+|      visual.transformer.resblocks.10.attn                   |      2.362M            |      91.871M   |
+|       visual.transformer.resblocks.10.attn.in_proj_weight   |       (2304, 768)      |                |
+|       visual.transformer.resblocks.10.attn.in_proj_bias     |       (2304,)          |                |
+|       visual.transformer.resblocks.10.attn.out_proj         |       0.591M           |                |
+|        visual.transformer.resblocks.10.attn.out_proj.weight |        (768, 768)      |                |
+|        visual.transformer.resblocks.10.attn.out_proj.bias   |        (768,)          |                |
+|      visual.transformer.resblocks.10.ln_1                   |      1.536K            |      0.146M    |
+|       visual.transformer.resblocks.10.ln_1.weight           |       (768,)           |                |
+|       visual.transformer.resblocks.10.ln_1.bias             |       (768,)           |                |
+|      visual.transformer.resblocks.10.mlp                    |      4.722M            |      103.809M  |
+|       visual.transformer.resblocks.10.mlp.c_fc              |       2.362M           |       51.905M  |
+|        visual.transformer.resblocks.10.mlp.c_fc.weight      |        (3072, 768)     |                |
+|        visual.transformer.resblocks.10.mlp.c_fc.bias        |        (3072,)         |                |
+|       visual.transformer.resblocks.10.mlp.c_proj            |       2.36M            |       51.905M  |
+|        visual.transformer.resblocks.10.mlp.c_proj.weight    |        (768, 3072)     |                |
+|        visual.transformer.resblocks.10.mlp.c_proj.bias      |        (768,)          |                |
+|      visual.transformer.resblocks.10.ln_2                   |      1.536K            |      84.48K    |
+|       visual.transformer.resblocks.10.ln_2.weight           |       (768,)           |                |
+|       visual.transformer.resblocks.10.ln_2.bias             |       (768,)           |                |
+|      visual.transformer.resblocks.10.token_reducer          |                        |      1.138M    |
+|     visual.transformer.resblocks.11                         |     7.088M             |     109.79M    |
+|      visual.transformer.resblocks.11.attn                   |      2.362M            |      52.648M   |
+|       visual.transformer.resblocks.11.attn.in_proj_weight   |       (2304, 768)      |                |
+|       visual.transformer.resblocks.11.attn.in_proj_bias     |       (2304,)          |                |
+|       visual.transformer.resblocks.11.attn.out_proj         |       0.591M           |                |
+|        visual.transformer.resblocks.11.attn.out_proj.weight |        (768, 768)      |                |
+|        visual.transformer.resblocks.11.attn.out_proj.bias   |        (768,)          |                |
+|      visual.transformer.resblocks.11.ln_1                   |      1.536K            |      84.48K    |
+|       visual.transformer.resblocks.11.ln_1.weight           |       (768,)           |                |
+|       visual.transformer.resblocks.11.ln_1.bias             |       (768,)           |                |
+|      visual.transformer.resblocks.11.mlp                    |      4.722M            |      56.623M   |
+|       visual.transformer.resblocks.11.mlp.c_fc              |       2.362M           |       28.312M  |
+|        visual.transformer.resblocks.11.mlp.c_fc.weight      |        (3072, 768)     |                |
+|        visual.transformer.resblocks.11.mlp.c_fc.bias        |        (3072,)         |                |
+|       visual.transformer.resblocks.11.mlp.c_proj            |       2.36M            |       28.312M  |
+|        visual.transformer.resblocks.11.mlp.c_proj.weight    |        (768, 3072)     |                |
+|        visual.transformer.resblocks.11.mlp.c_proj.bias      |        (768,)          |                |
+|      visual.transformer.resblocks.11.ln_2                   |      1.536K            |      46.08K    |
+|       visual.transformer.resblocks.11.ln_2.weight           |       (768,)           |                |
+|       visual.transformer.resblocks.11.ln_2.bias             |       (768,)           |                |
+|      visual.transformer.resblocks.11.token_reducer          |                        |      0.389M    |
+|   visual.ln_post                                            |   1.536K               |   3.84K        |
+|    visual.ln_post.weight                                    |    (768,)              |                |
+|    visual.ln_post.bias                                      |    (768,)              |                |
+|  transformer                                                |  37.835M               |  3.024G        |
+|   transformer.cross_text                                    |   (1, 12, 512)         |                |
+|   transformer.resblocks                                     |   37.829M              |   3.024G       |
+|    transformer.resblocks.0                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.0.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.0.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.0.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.0.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.0.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.0.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.0.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.0.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.0.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.0.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.0.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.0.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.0.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.0.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.0.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.0.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.0.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.0.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.0.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.1                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.1.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.1.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.1.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.1.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.1.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.1.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.1.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.1.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.1.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.1.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.1.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.1.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.1.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.1.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.1.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.1.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.1.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.1.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.1.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.2                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.2.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.2.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.2.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.2.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.2.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.2.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.2.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.2.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.2.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.2.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.2.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.2.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.2.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.2.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.2.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.2.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.2.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.2.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.2.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.3                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.3.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.3.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.3.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.3.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.3.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.3.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.3.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.3.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.3.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.3.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.3.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.3.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.3.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.3.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.3.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.3.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.3.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.3.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.3.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.4                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.4.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.4.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.4.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.4.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.4.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.4.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.4.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.4.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.4.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.4.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.4.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.4.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.4.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.4.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.4.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.4.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.4.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.4.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.4.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.5                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.5.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.5.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.5.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.5.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.5.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.5.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.5.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.5.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.5.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.5.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.5.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.5.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.5.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.5.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.5.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.5.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.5.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.5.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.5.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.6                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.6.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.6.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.6.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.6.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.6.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.6.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.6.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.6.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.6.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.6.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.6.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.6.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.6.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.6.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.6.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.6.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.6.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.6.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.6.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.7                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.7.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.7.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.7.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.7.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.7.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.7.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.7.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.7.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.7.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.7.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.7.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.7.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.7.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.7.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.7.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.7.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.7.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.7.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.7.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.8                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.8.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.8.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.8.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.8.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.8.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.8.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.8.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.8.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.8.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.8.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.8.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.8.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.8.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.8.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.8.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.8.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.8.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.8.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.8.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.9                                  |    3.152M              |    251.996M    |
+|     transformer.resblocks.9.attn                            |     1.051M             |     88.019M    |
+|      transformer.resblocks.9.attn.in_proj_weight            |      (1536, 512)       |                |
+|      transformer.resblocks.9.attn.in_proj_bias              |      (1536,)           |                |
+|      transformer.resblocks.9.attn.out_proj                  |      0.263M            |                |
+|       transformer.resblocks.9.attn.out_proj.weight          |       (512, 512)       |                |
+|       transformer.resblocks.9.attn.out_proj.bias            |       (512,)           |                |
+|     transformer.resblocks.9.ln_1                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.9.ln_1.weight                    |      (512,)            |                |
+|      transformer.resblocks.9.ln_1.bias                      |      (512,)            |                |
+|     transformer.resblocks.9.mlp                             |     2.1M               |     163.578M   |
+|      transformer.resblocks.9.mlp.c_fc                       |      1.051M            |      81.789M   |
+|       transformer.resblocks.9.mlp.c_fc.weight               |       (2048, 512)      |                |
+|       transformer.resblocks.9.mlp.c_fc.bias                 |       (2048,)          |                |
+|      transformer.resblocks.9.mlp.c_proj                     |      1.049M            |      81.789M   |
+|       transformer.resblocks.9.mlp.c_proj.weight             |       (512, 2048)      |                |
+|       transformer.resblocks.9.mlp.c_proj.bias               |       (512,)           |                |
+|     transformer.resblocks.9.ln_2                            |     1.024K             |     0.2M       |
+|      transformer.resblocks.9.ln_2.weight                    |      (512,)            |                |
+|      transformer.resblocks.9.ln_2.bias                      |      (512,)            |                |
+|    transformer.resblocks.10                                 |    3.152M              |    251.996M    |
+|     transformer.resblocks.10.attn                           |     1.051M             |     88.019M    |
+|      transformer.resblocks.10.attn.in_proj_weight           |      (1536, 512)       |                |
+|      transformer.resblocks.10.attn.in_proj_bias             |      (1536,)           |                |
+|      transformer.resblocks.10.attn.out_proj                 |      0.263M            |                |
+|       transformer.resblocks.10.attn.out_proj.weight         |       (512, 512)       |                |
+|       transformer.resblocks.10.attn.out_proj.bias           |       (512,)           |                |
+|     transformer.resblocks.10.ln_1                           |     1.024K             |     0.2M       |
+|      transformer.resblocks.10.ln_1.weight                   |      (512,)            |                |
+|      transformer.resblocks.10.ln_1.bias                     |      (512,)            |                |
+|     transformer.resblocks.10.mlp                            |     2.1M               |     163.578M   |
+|      transformer.resblocks.10.mlp.c_fc                      |      1.051M            |      81.789M   |
+|       transformer.resblocks.10.mlp.c_fc.weight              |       (2048, 512)      |                |
+|       transformer.resblocks.10.mlp.c_fc.bias                |       (2048,)          |                |
+|      transformer.resblocks.10.mlp.c_proj                    |      1.049M            |      81.789M   |
+|       transformer.resblocks.10.mlp.c_proj.weight            |       (512, 2048)      |                |
+|       transformer.resblocks.10.mlp.c_proj.bias              |       (512,)           |                |
+|     transformer.resblocks.10.ln_2                           |     1.024K             |     0.2M       |
+|      transformer.resblocks.10.ln_2.weight                   |      (512,)            |                |
+|      transformer.resblocks.10.ln_2.bias                     |      (512,)            |                |
+|    transformer.resblocks.11                                 |    3.152M              |    251.996M    |
+|     transformer.resblocks.11.attn                           |     1.051M             |     88.019M    |
+|      transformer.resblocks.11.attn.in_proj_weight           |      (1536, 512)       |                |
+|      transformer.resblocks.11.attn.in_proj_bias             |      (1536,)           |                |
+|      transformer.resblocks.11.attn.out_proj                 |      0.263M            |                |
+|       transformer.resblocks.11.attn.out_proj.weight         |       (512, 512)       |                |
+|       transformer.resblocks.11.attn.out_proj.bias           |       (512,)           |                |
+|     transformer.resblocks.11.ln_1                           |     1.024K             |     0.2M       |
+|      transformer.resblocks.11.ln_1.weight                   |      (512,)            |                |
+|      transformer.resblocks.11.ln_1.bias                     |      (512,)            |                |
+|     transformer.resblocks.11.mlp                            |     2.1M               |     163.578M   |
+|      transformer.resblocks.11.mlp.c_fc                      |      1.051M            |      81.789M   |
+|       transformer.resblocks.11.mlp.c_fc.weight              |       (2048, 512)      |                |
+|       transformer.resblocks.11.mlp.c_fc.bias                |       (2048,)          |                |
+|      transformer.resblocks.11.mlp.c_proj                    |      1.049M            |      81.789M   |
+|       transformer.resblocks.11.mlp.c_proj.weight            |       (512, 2048)      |                |
+|       transformer.resblocks.11.mlp.c_proj.bias              |       (512,)           |                |
+|     transformer.resblocks.11.ln_2                           |     1.024K             |     0.2M       |
+|      transformer.resblocks.11.ln_2.weight                   |      (512,)            |                |
+|      transformer.resblocks.11.ln_2.bias                     |      (512,)            |                |
+|  token_embedding                                            |  25.297M               |  0             |
+|   token_embedding.weight                                    |   (49408, 512)         |                |
+|  ln_final                                                   |  1.024K                |  0.2M          |
+|   ln_final.weight                                           |   (512,)               |                |
+|   ln_final.bias                                             |   (512,)               |                |
+Total 12.035655936
+Start training
+Train Epoch: [0]  [  0/283]  eta: 0:09:37  lr: 0.00001000  loss: 0.4329  loss_ita: 0.3704  loss_kd: 0.0626  time: 2.0422  data: 0.9657  max mem: 7248
+Train Epoch: [0]  [ 50/283]  eta: 0:01:48  lr: 0.00001000  loss: 0.1402  loss_ita: 0.0667  loss_kd: 0.0735  time: 0.4278  data: 0.0002  max mem: 8974
+Train Epoch: [0]  [100/283]  eta: 0:01:21  lr: 0.00001000  loss: 0.2235  loss_ita: 0.1514  loss_kd: 0.0721  time: 0.4300  data: 0.0002  max mem: 8974
+Train Epoch: [0]  [150/283]  eta: 0:00:58  lr: 0.00001000  loss: 0.1414  loss_ita: 0.0793  loss_kd: 0.0621  time: 0.4315  data: 0.0002  max mem: 8974
+Train Epoch: [0]  [200/283]  eta: 0:00:36  lr: 0.00001000  loss: 0.1016  loss_ita: 0.0420  loss_kd: 0.0597  time: 0.4399  data: 0.0002  max mem: 8974
+Train Epoch: [0]  [250/283]  eta: 0:00:14  lr: 0.00001000  loss: 0.1307  loss_ita: 0.0739  loss_kd: 0.0568  time: 0.4287  data: 0.0004  max mem: 8974
+Train Epoch: [0]  [282/283]  eta: 0:00:00  lr: 0.00001000  loss: 0.1152  loss_ita: 0.0601  loss_kd: 0.0551  time: 0.4237  data: 0.0002  max mem: 8974
+Train Epoch: [0] Total time: 0:02:04 (0.4383 s / it)
+Averaged stats: lr: 0.0000  loss: 0.1323  loss_ita: 0.0668  loss_kd: 0.0656
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 90.82840236686391, 'txt_r5': 98.81656804733728, 'txt_r10': 99.70414201183432, 'txt_r_mean': 96.44970414201184, 'img_r1': 77.00197238658777, 'img_r5': 94.06311637080867, 'img_r10': 97.17948717948718, 'img_r_mean': 89.41485864562787, 'r_mean': 92.93228139381986}
+{'txt_r1': 90.1, 'txt_r5': 98.1, 'txt_r10': 99.3, 'txt_r_mean': 95.83333333333333, 'img_r1': 75.66, 'img_r5': 93.98, 'img_r10': 97.2, 'img_r_mean': 88.94666666666666, 'r_mean': 92.38999999999999}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.132', 'train_loss_ita': '0.067', 'train_loss_kd': '0.066', 'val_txt_r1': 90.82840236686391, 'val_txt_r5': 98.81656804733728, 'val_txt_r10': 99.70414201183432, 'val_txt_r_mean': 96.44970414201184, 'val_img_r1': 77.00197238658777, 'val_img_r5': 94.06311637080867, 'val_img_r10': 97.17948717948718, 'val_img_r_mean': 89.41485864562787, 'val_r_mean': 92.93228139381986, 'test_txt_r1': 90.1, 'test_txt_r5': 98.1, 'test_txt_r10': 99.3, 'test_txt_r_mean': 95.83333333333333, 'test_img_r1': 75.66, 'test_img_r5': 93.98, 'test_img_r10': 97.2, 'test_img_r_mean': 88.94666666666666, 'test_r_mean': 92.38999999999999, 'epoch': 0, 'best_epoch': 0}
+Train Epoch: [1]  [  0/283]  eta: 0:06:03  lr: 0.00000983  loss: 0.0626  loss_ita: 0.0075  loss_kd: 0.0551  time: 1.2830  data: 0.4246  max mem: 8974
+Train Epoch: [1]  [ 50/283]  eta: 0:01:43  lr: 0.00000983  loss: 0.1100  loss_ita: 0.0574  loss_kd: 0.0526  time: 0.4270  data: 0.0002  max mem: 8983
+Train Epoch: [1]  [100/283]  eta: 0:01:19  lr: 0.00000983  loss: 0.0686  loss_ita: 0.0136  loss_kd: 0.0549  time: 0.4262  data: 0.0002  max mem: 8983
+Train Epoch: [1]  [150/283]  eta: 0:00:57  lr: 0.00000983  loss: 0.1062  loss_ita: 0.0520  loss_kd: 0.0541  time: 0.4304  data: 0.0002  max mem: 8983
+Train Epoch: [1]  [200/283]  eta: 0:00:36  lr: 0.00000983  loss: 0.1230  loss_ita: 0.0670  loss_kd: 0.0559  time: 0.4363  data: 0.0002  max mem: 8983
+Train Epoch: [1]  [250/283]  eta: 0:00:14  lr: 0.00000983  loss: 0.0974  loss_ita: 0.0453  loss_kd: 0.0521  time: 0.4326  data: 0.0001  max mem: 8983
+Train Epoch: [1]  [282/283]  eta: 0:00:00  lr: 0.00000983  loss: 0.0639  loss_ita: 0.0195  loss_kd: 0.0444  time: 0.4235  data: 0.0002  max mem: 8983
+Train Epoch: [1] Total time: 0:02:03 (0.4351 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0937  loss_ita: 0.0415  loss_kd: 0.0522
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 89.25049309664695, 'txt_r5': 98.42209072978304, 'txt_r10': 99.30966469428007, 'txt_r_mean': 95.66074950690336, 'img_r1': 76.58777120315582, 'img_r5': 94.20118343195266, 'img_r10': 97.29783037475345, 'img_r_mean': 89.36226166995398, 'r_mean': 92.51150558842866}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.094', 'train_loss_ita': '0.042', 'train_loss_kd': '0.052', 'val_txt_r1': 89.25049309664695, 'val_txt_r5': 98.42209072978304, 'val_txt_r10': 99.30966469428007, 'val_txt_r_mean': 95.66074950690336, 'val_img_r1': 76.58777120315582, 'val_img_r5': 94.20118343195266, 'val_img_r10': 97.29783037475345, 'val_img_r_mean': 89.36226166995398, 'val_r_mean': 92.51150558842866, 'test_txt_r1': 90.1, 'test_txt_r5': 98.1, 'test_txt_r10': 99.3, 'test_txt_r_mean': 95.83333333333333, 'test_img_r1': 75.66, 'test_img_r5': 93.98, 'test_img_r10': 97.2, 'test_img_r_mean': 88.94666666666666, 'test_r_mean': 92.38999999999999, 'epoch': 1, 'best_epoch': 0}
+Train Epoch: [2]  [  0/283]  eta: 0:06:04  lr: 0.00000933  loss: 0.1214  loss_ita: 0.0689  loss_kd: 0.0525  time: 1.2895  data: 0.4724  max mem: 8983
+Train Epoch: [2]  [ 50/283]  eta: 0:01:44  lr: 0.00000933  loss: 0.0928  loss_ita: 0.0495  loss_kd: 0.0433  time: 0.4291  data: 0.0002  max mem: 8983
+Train Epoch: [2]  [100/283]  eta: 0:01:20  lr: 0.00000933  loss: 0.0799  loss_ita: 0.0343  loss_kd: 0.0456  time: 0.4302  data: 0.0001  max mem: 8983
+Train Epoch: [2]  [150/283]  eta: 0:00:58  lr: 0.00000933  loss: 0.0459  loss_ita: 0.0066  loss_kd: 0.0393  time: 0.4431  data: 0.0002  max mem: 8983
+Train Epoch: [2]  [200/283]  eta: 0:00:36  lr: 0.00000933  loss: 0.0624  loss_ita: 0.0191  loss_kd: 0.0433  time: 0.4268  data: 0.0002  max mem: 8983
+Train Epoch: [2]  [250/283]  eta: 0:00:14  lr: 0.00000933  loss: 0.0664  loss_ita: 0.0250  loss_kd: 0.0415  time: 0.4287  data: 0.0002  max mem: 8983
+Train Epoch: [2]  [282/283]  eta: 0:00:00  lr: 0.00000933  loss: 0.0501  loss_ita: 0.0123  loss_kd: 0.0378  time: 0.4229  data: 0.0002  max mem: 8983
+Train Epoch: [2] Total time: 0:02:03 (0.4351 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0743  loss_ita: 0.0316  loss_kd: 0.0427
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 90.72978303747534, 'txt_r5': 99.0138067061144, 'txt_r10': 99.90138067061145, 'txt_r_mean': 96.5483234714004, 'img_r1': 77.7120315581854, 'img_r5': 94.91124260355029, 'img_r10': 97.51479289940828, 'img_r_mean': 90.04602235371466, 'r_mean': 93.29717291255753}
+{'txt_r1': 89.1, 'txt_r5': 98.7, 'txt_r10': 99.7, 'txt_r_mean': 95.83333333333333, 'img_r1': 77.16, 'img_r5': 94.8, 'img_r10': 97.66, 'img_r_mean': 89.87333333333333, 'r_mean': 92.85333333333332}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.074', 'train_loss_ita': '0.032', 'train_loss_kd': '0.043', 'val_txt_r1': 90.72978303747534, 'val_txt_r5': 99.0138067061144, 'val_txt_r10': 99.90138067061145, 'val_txt_r_mean': 96.5483234714004, 'val_img_r1': 77.7120315581854, 'val_img_r5': 94.91124260355029, 'val_img_r10': 97.51479289940828, 'val_img_r_mean': 90.04602235371466, 'val_r_mean': 93.29717291255753, 'test_txt_r1': 89.1, 'test_txt_r5': 98.7, 'test_txt_r10': 99.7, 'test_txt_r_mean': 95.83333333333333, 'test_img_r1': 77.16, 'test_img_r5': 94.8, 'test_img_r10': 97.66, 'test_img_r_mean': 89.87333333333333, 'test_r_mean': 92.85333333333332, 'epoch': 2, 'best_epoch': 2}
+Train Epoch: [3]  [  0/283]  eta: 0:06:11  lr: 0.00000854  loss: 0.0500  loss_ita: 0.0085  loss_kd: 0.0415  time: 1.3113  data: 0.4943  max mem: 8983
+Train Epoch: [3]  [ 50/283]  eta: 0:01:44  lr: 0.00000854  loss: 0.0409  loss_ita: 0.0043  loss_kd: 0.0367  time: 0.4296  data: 0.0002  max mem: 8983
+Train Epoch: [3]  [100/283]  eta: 0:01:20  lr: 0.00000854  loss: 0.0604  loss_ita: 0.0226  loss_kd: 0.0377  time: 0.4313  data: 0.0002  max mem: 8983
+Train Epoch: [3]  [150/283]  eta: 0:00:58  lr: 0.00000854  loss: 0.0635  loss_ita: 0.0299  loss_kd: 0.0336  time: 0.4286  data: 0.0002  max mem: 8983
+Train Epoch: [3]  [200/283]  eta: 0:00:36  lr: 0.00000854  loss: 0.0454  loss_ita: 0.0084  loss_kd: 0.0370  time: 0.4447  data: 0.0002  max mem: 8983
+Train Epoch: [3]  [250/283]  eta: 0:00:14  lr: 0.00000854  loss: 0.0477  loss_ita: 0.0129  loss_kd: 0.0348  time: 0.4291  data: 0.0002  max mem: 8983
+Train Epoch: [3]  [282/283]  eta: 0:00:00  lr: 0.00000854  loss: 0.0730  loss_ita: 0.0377  loss_kd: 0.0353  time: 0.4291  data: 0.0002  max mem: 8983
+Train Epoch: [3] Total time: 0:02:03 (0.4375 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0629  loss_ita: 0.0260  loss_kd: 0.0369
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 91.61735700197238, 'txt_r5': 98.61932938856016, 'txt_r10': 99.40828402366864, 'txt_r_mean': 96.54832347140041, 'img_r1': 77.81065088757397, 'img_r5': 95.02958579881657, 'img_r10': 97.3767258382643, 'img_r_mean': 90.07232084155162, 'r_mean': 93.31032215647602}
+{'txt_r1': 90.2, 'txt_r5': 98.7, 'txt_r10': 99.5, 'txt_r_mean': 96.13333333333333, 'img_r1': 77.28, 'img_r5': 94.5, 'img_r10': 97.54, 'img_r_mean': 89.77333333333333, 'r_mean': 92.95333333333332}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.063', 'train_loss_ita': '0.026', 'train_loss_kd': '0.037', 'val_txt_r1': 91.61735700197238, 'val_txt_r5': 98.61932938856016, 'val_txt_r10': 99.40828402366864, 'val_txt_r_mean': 96.54832347140041, 'val_img_r1': 77.81065088757397, 'val_img_r5': 95.02958579881657, 'val_img_r10': 97.3767258382643, 'val_img_r_mean': 90.07232084155162, 'val_r_mean': 93.31032215647602, 'test_txt_r1': 90.2, 'test_txt_r5': 98.7, 'test_txt_r10': 99.5, 'test_txt_r_mean': 96.13333333333333, 'test_img_r1': 77.28, 'test_img_r5': 94.5, 'test_img_r10': 97.54, 'test_img_r_mean': 89.77333333333333, 'test_r_mean': 92.95333333333332, 'epoch': 3, 'best_epoch': 3}
+Train Epoch: [4]  [  0/283]  eta: 0:06:13  lr: 0.00000750  loss: 0.0533  loss_ita: 0.0166  loss_kd: 0.0367  time: 1.3210  data: 0.4818  max mem: 8983
+Train Epoch: [4]  [ 50/283]  eta: 0:01:44  lr: 0.00000750  loss: 0.0562  loss_ita: 0.0199  loss_kd: 0.0363  time: 0.4313  data: 0.0002  max mem: 8983
+Train Epoch: [4]  [100/283]  eta: 0:01:20  lr: 0.00000750  loss: 0.0444  loss_ita: 0.0105  loss_kd: 0.0339  time: 0.4303  data: 0.0001  max mem: 8983
+Train Epoch: [4]  [150/283]  eta: 0:00:58  lr: 0.00000750  loss: 0.0785  loss_ita: 0.0446  loss_kd: 0.0338  time: 0.4351  data: 0.0001  max mem: 8983
+Train Epoch: [4]  [200/283]  eta: 0:00:36  lr: 0.00000750  loss: 0.0751  loss_ita: 0.0448  loss_kd: 0.0303  time: 0.4295  data: 0.0001  max mem: 8983
+Train Epoch: [4]  [250/283]  eta: 0:00:14  lr: 0.00000750  loss: 0.0714  loss_ita: 0.0393  loss_kd: 0.0321  time: 0.4413  data: 0.0002  max mem: 8983
+Train Epoch: [4]  [282/283]  eta: 0:00:00  lr: 0.00000750  loss: 0.0923  loss_ita: 0.0577  loss_kd: 0.0346  time: 0.4274  data: 0.0002  max mem: 8983
+Train Epoch: [4] Total time: 0:02:03 (0.4365 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0564  loss_ita: 0.0233  loss_kd: 0.0332
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 89.74358974358974, 'txt_r5': 98.52071005917159, 'txt_r10': 99.80276134122288, 'txt_r_mean': 96.0223537146614, 'img_r1': 77.63313609467455, 'img_r5': 94.87179487179488, 'img_r10': 97.55424063116371, 'img_r_mean': 90.01972386587772, 'r_mean': 93.02103879026956}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.056', 'train_loss_ita': '0.023', 'train_loss_kd': '0.033', 'val_txt_r1': 89.74358974358974, 'val_txt_r5': 98.52071005917159, 'val_txt_r10': 99.80276134122288, 'val_txt_r_mean': 96.0223537146614, 'val_img_r1': 77.63313609467455, 'val_img_r5': 94.87179487179488, 'val_img_r10': 97.55424063116371, 'val_img_r_mean': 90.01972386587772, 'val_r_mean': 93.02103879026956, 'test_txt_r1': 90.2, 'test_txt_r5': 98.7, 'test_txt_r10': 99.5, 'test_txt_r_mean': 96.13333333333333, 'test_img_r1': 77.28, 'test_img_r5': 94.5, 'test_img_r10': 97.54, 'test_img_r_mean': 89.77333333333333, 'test_r_mean': 92.95333333333332, 'epoch': 4, 'best_epoch': 3}
+Train Epoch: [5]  [  0/283]  eta: 0:06:17  lr: 0.00000629  loss: 0.0361  loss_ita: 0.0051  loss_kd: 0.0310  time: 1.3356  data: 0.5945  max mem: 8983
+Train Epoch: [5]  [ 50/283]  eta: 0:01:44  lr: 0.00000629  loss: 0.0304  loss_ita: 0.0013  loss_kd: 0.0291  time: 0.4310  data: 0.0002  max mem: 8983
+Train Epoch: [5]  [100/283]  eta: 0:01:20  lr: 0.00000629  loss: 0.0550  loss_ita: 0.0256  loss_kd: 0.0293  time: 0.4336  data: 0.0002  max mem: 8983
+Train Epoch: [5]  [150/283]  eta: 0:00:58  lr: 0.00000629  loss: 0.0516  loss_ita: 0.0199  loss_kd: 0.0317  time: 0.4343  data: 0.0003  max mem: 8983
+Train Epoch: [5]  [200/283]  eta: 0:00:36  lr: 0.00000629  loss: 0.0523  loss_ita: 0.0219  loss_kd: 0.0305  time: 0.4512  data: 0.0002  max mem: 8983
+Train Epoch: [5]  [250/283]  eta: 0:00:14  lr: 0.00000629  loss: 0.0463  loss_ita: 0.0163  loss_kd: 0.0300  time: 0.4313  data: 0.0002  max mem: 8983
+Train Epoch: [5]  [282/283]  eta: 0:00:00  lr: 0.00000629  loss: 0.0359  loss_ita: 0.0054  loss_kd: 0.0306  time: 0.4307  data: 0.0002  max mem: 8983
+Train Epoch: [5] Total time: 0:02:04 (0.4400 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0499  loss_ita: 0.0191  loss_kd: 0.0308
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 89.74358974358974, 'txt_r5': 99.0138067061144, 'txt_r10': 99.70414201183432, 'txt_r_mean': 96.15384615384615, 'img_r1': 77.92899408284023, 'img_r5': 95.18737672583826, 'img_r10': 97.63313609467455, 'img_r_mean': 90.24983563445102, 'r_mean': 93.20184089414857}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.050', 'train_loss_ita': '0.019', 'train_loss_kd': '0.031', 'val_txt_r1': 89.74358974358974, 'val_txt_r5': 99.0138067061144, 'val_txt_r10': 99.70414201183432, 'val_txt_r_mean': 96.15384615384615, 'val_img_r1': 77.92899408284023, 'val_img_r5': 95.18737672583826, 'val_img_r10': 97.63313609467455, 'val_img_r_mean': 90.24983563445102, 'val_r_mean': 93.20184089414857, 'test_txt_r1': 90.2, 'test_txt_r5': 98.7, 'test_txt_r10': 99.5, 'test_txt_r_mean': 96.13333333333333, 'test_img_r1': 77.28, 'test_img_r5': 94.5, 'test_img_r10': 97.54, 'test_img_r_mean': 89.77333333333333, 'test_r_mean': 92.95333333333332, 'epoch': 5, 'best_epoch': 3}
+Train Epoch: [6]  [  0/283]  eta: 0:06:36  lr: 0.00000500  loss: 0.0637  loss_ita: 0.0330  loss_kd: 0.0306  time: 1.4007  data: 0.6358  max mem: 8983
+Train Epoch: [6]  [ 50/283]  eta: 0:01:45  lr: 0.00000500  loss: 0.0325  loss_ita: 0.0033  loss_kd: 0.0292  time: 0.4336  data: 0.0002  max mem: 8983
+Train Epoch: [6]  [100/283]  eta: 0:01:21  lr: 0.00000500  loss: 0.0308  loss_ita: 0.0031  loss_kd: 0.0277  time: 0.4342  data: 0.0002  max mem: 8983
+Train Epoch: [6]  [150/283]  eta: 0:00:58  lr: 0.00000500  loss: 0.0305  loss_ita: 0.0034  loss_kd: 0.0271  time: 0.4315  data: 0.0002  max mem: 8983
+Train Epoch: [6]  [200/283]  eta: 0:00:36  lr: 0.00000500  loss: 0.0400  loss_ita: 0.0107  loss_kd: 0.0294  time: 0.4340  data: 0.0002  max mem: 8983
+Train Epoch: [6]  [250/283]  eta: 0:00:14  lr: 0.00000500  loss: 0.0816  loss_ita: 0.0549  loss_kd: 0.0266  time: 0.4396  data: 0.0001  max mem: 8983
+Train Epoch: [6]  [282/283]  eta: 0:00:00  lr: 0.00000500  loss: 0.0288  loss_ita: 0.0034  loss_kd: 0.0254  time: 0.4288  data: 0.0002  max mem: 8983
+Train Epoch: [6] Total time: 0:02:04 (0.4386 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0457  loss_ita: 0.0172  loss_kd: 0.0285
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 89.8422090729783, 'txt_r5': 99.0138067061144, 'txt_r10': 99.40828402366864, 'txt_r_mean': 96.08809993425378, 'img_r1': 78.04733727810651, 'img_r5': 95.06903353057199, 'img_r10': 97.47534516765286, 'img_r_mean': 90.19723865877711, 'r_mean': 93.14266929651544}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.046', 'train_loss_ita': '0.017', 'train_loss_kd': '0.028', 'val_txt_r1': 89.8422090729783, 'val_txt_r5': 99.0138067061144, 'val_txt_r10': 99.40828402366864, 'val_txt_r_mean': 96.08809993425378, 'val_img_r1': 78.04733727810651, 'val_img_r5': 95.06903353057199, 'val_img_r10': 97.47534516765286, 'val_img_r_mean': 90.19723865877711, 'val_r_mean': 93.14266929651544, 'test_txt_r1': 90.2, 'test_txt_r5': 98.7, 'test_txt_r10': 99.5, 'test_txt_r_mean': 96.13333333333333, 'test_img_r1': 77.28, 'test_img_r5': 94.5, 'test_img_r10': 97.54, 'test_img_r_mean': 89.77333333333333, 'test_r_mean': 92.95333333333332, 'epoch': 6, 'best_epoch': 3}
+Train Epoch: [7]  [  0/283]  eta: 0:06:02  lr: 0.00000371  loss: 0.0287  loss_ita: 0.0034  loss_kd: 0.0253  time: 1.2827  data: 0.4494  max mem: 8983
+Train Epoch: [7]  [ 50/283]  eta: 0:01:44  lr: 0.00000371  loss: 0.0295  loss_ita: 0.0040  loss_kd: 0.0255  time: 0.4290  data: 0.0002  max mem: 8983
+Train Epoch: [7]  [100/283]  eta: 0:01:20  lr: 0.00000371  loss: 0.0355  loss_ita: 0.0086  loss_kd: 0.0269  time: 0.4275  data: 0.0001  max mem: 8983
+Train Epoch: [7]  [150/283]  eta: 0:00:57  lr: 0.00000371  loss: 0.0422  loss_ita: 0.0168  loss_kd: 0.0254  time: 0.4328  data: 0.0001  max mem: 8983
+Train Epoch: [7]  [200/283]  eta: 0:00:36  lr: 0.00000371  loss: 0.0269  loss_ita: 0.0021  loss_kd: 0.0248  time: 0.4362  data: 0.0001  max mem: 8983
+Train Epoch: [7]  [250/283]  eta: 0:00:14  lr: 0.00000371  loss: 0.0494  loss_ita: 0.0246  loss_kd: 0.0248  time: 0.4305  data: 0.0001  max mem: 8983
+Train Epoch: [7]  [282/283]  eta: 0:00:00  lr: 0.00000371  loss: 0.0300  loss_ita: 0.0044  loss_kd: 0.0256  time: 0.4297  data: 0.0002  max mem: 8983
+Train Epoch: [7] Total time: 0:02:03 (0.4352 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0393  loss_ita: 0.0139  loss_kd: 0.0254
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 90.63116370808679, 'txt_r5': 99.21104536489152, 'txt_r10': 99.5069033530572, 'txt_r_mean': 96.44970414201184, 'img_r1': 79.27021696252466, 'img_r5': 95.02958579881657, 'img_r10': 97.55424063116371, 'img_r_mean': 90.61801446416831, 'r_mean': 93.53385930309008}
+{'txt_r1': 91.4, 'txt_r5': 99.1, 'txt_r10': 99.7, 'txt_r_mean': 96.73333333333333, 'img_r1': 78.38, 'img_r5': 95.28, 'img_r10': 97.78, 'img_r_mean': 90.48, 'r_mean': 93.60666666666667}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.039', 'train_loss_ita': '0.014', 'train_loss_kd': '0.025', 'val_txt_r1': 90.63116370808679, 'val_txt_r5': 99.21104536489152, 'val_txt_r10': 99.5069033530572, 'val_txt_r_mean': 96.44970414201184, 'val_img_r1': 79.27021696252466, 'val_img_r5': 95.02958579881657, 'val_img_r10': 97.55424063116371, 'val_img_r_mean': 90.61801446416831, 'val_r_mean': 93.53385930309008, 'test_txt_r1': 91.4, 'test_txt_r5': 99.1, 'test_txt_r10': 99.7, 'test_txt_r_mean': 96.73333333333333, 'test_img_r1': 78.38, 'test_img_r5': 95.28, 'test_img_r10': 97.78, 'test_img_r_mean': 90.48, 'test_r_mean': 93.60666666666667, 'epoch': 7, 'best_epoch': 7}
+Train Epoch: [8]  [  0/283]  eta: 0:06:13  lr: 0.00000250  loss: 0.0305  loss_ita: 0.0046  loss_kd: 0.0259  time: 1.3181  data: 0.4681  max mem: 8983
+Train Epoch: [8]  [ 50/283]  eta: 0:01:45  lr: 0.00000250  loss: 0.0594  loss_ita: 0.0333  loss_kd: 0.0261  time: 0.4403  data: 0.0002  max mem: 8983
+Train Epoch: [8]  [100/283]  eta: 0:01:21  lr: 0.00000250  loss: 0.0485  loss_ita: 0.0233  loss_kd: 0.0252  time: 0.4322  data: 0.0002  max mem: 8983
+Train Epoch: [8]  [150/283]  eta: 0:00:58  lr: 0.00000250  loss: 0.0357  loss_ita: 0.0104  loss_kd: 0.0252  time: 0.4329  data: 0.0001  max mem: 8983
+Train Epoch: [8]  [200/283]  eta: 0:00:36  lr: 0.00000250  loss: 0.0296  loss_ita: 0.0051  loss_kd: 0.0245  time: 0.4304  data: 0.0002  max mem: 8983
+Train Epoch: [8]  [250/283]  eta: 0:00:14  lr: 0.00000250  loss: 0.0854  loss_ita: 0.0610  loss_kd: 0.0244  time: 0.4284  data: 0.0001  max mem: 8983
+Train Epoch: [8]  [282/283]  eta: 0:00:00  lr: 0.00000250  loss: 0.0777  loss_ita: 0.0531  loss_kd: 0.0247  time: 0.4429  data: 0.0002  max mem: 8983
+Train Epoch: [8] Total time: 0:02:03 (0.4375 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0381  loss_ita: 0.0129  loss_kd: 0.0251
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 91.91321499013807, 'txt_r5': 98.71794871794872, 'txt_r10': 99.70414201183432, 'txt_r_mean': 96.7784352399737, 'img_r1': 79.03353057199212, 'img_r5': 95.4043392504931, 'img_r10': 97.63313609467455, 'img_r_mean': 90.69033530571993, 'r_mean': 93.73438527284682}
+{'txt_r1': 92.0, 'txt_r5': 99.1, 'txt_r10': 99.8, 'txt_r_mean': 96.96666666666665, 'img_r1': 78.72, 'img_r5': 95.3, 'img_r10': 97.98, 'img_r_mean': 90.66666666666667, 'r_mean': 93.81666666666666}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.038', 'train_loss_ita': '0.013', 'train_loss_kd': '0.025', 'val_txt_r1': 91.91321499013807, 'val_txt_r5': 98.71794871794872, 'val_txt_r10': 99.70414201183432, 'val_txt_r_mean': 96.7784352399737, 'val_img_r1': 79.03353057199212, 'val_img_r5': 95.4043392504931, 'val_img_r10': 97.63313609467455, 'val_img_r_mean': 90.69033530571993, 'val_r_mean': 93.73438527284682, 'test_txt_r1': 92.0, 'test_txt_r5': 99.1, 'test_txt_r10': 99.8, 'test_txt_r_mean': 96.96666666666665, 'test_img_r1': 78.72, 'test_img_r5': 95.3, 'test_img_r10': 97.98, 'test_img_r_mean': 90.66666666666667, 'test_r_mean': 93.81666666666666, 'epoch': 8, 'best_epoch': 8}
+Train Epoch: [9]  [  0/283]  eta: 0:06:22  lr: 0.00000146  loss: 0.0493  loss_ita: 0.0236  loss_kd: 0.0257  time: 1.3520  data: 0.4425  max mem: 8983
+Train Epoch: [9]  [ 50/283]  eta: 0:01:45  lr: 0.00000146  loss: 0.0291  loss_ita: 0.0042  loss_kd: 0.0249  time: 0.4305  data: 0.0001  max mem: 8983
+Train Epoch: [9]  [100/283]  eta: 0:01:20  lr: 0.00000146  loss: 0.0352  loss_ita: 0.0114  loss_kd: 0.0239  time: 0.4289  data: 0.0001  max mem: 8983
+Train Epoch: [9]  [150/283]  eta: 0:00:58  lr: 0.00000146  loss: 0.0815  loss_ita: 0.0567  loss_kd: 0.0248  time: 0.4274  data: 0.0001  max mem: 8983
+Train Epoch: [9]  [200/283]  eta: 0:00:36  lr: 0.00000146  loss: 0.0406  loss_ita: 0.0163  loss_kd: 0.0243  time: 0.4267  data: 0.0001  max mem: 8983
+Train Epoch: [9]  [250/283]  eta: 0:00:14  lr: 0.00000146  loss: 0.0391  loss_ita: 0.0138  loss_kd: 0.0252  time: 0.4404  data: 0.0001  max mem: 8983
+Train Epoch: [9]  [282/283]  eta: 0:00:00  lr: 0.00000146  loss: 0.0245  loss_ita: 0.0003  loss_kd: 0.0242  time: 0.4397  data: 0.0002  max mem: 8983
+Train Epoch: [9] Total time: 0:02:03 (0.4352 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0372  loss_ita: 0.0124  loss_kd: 0.0247
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 91.91321499013807, 'txt_r5': 99.21104536489152, 'txt_r10': 99.70414201183432, 'txt_r_mean': 96.94280078895464, 'img_r1': 79.54635108481263, 'img_r5': 95.2268244575937, 'img_r10': 97.6923076923077, 'img_r_mean': 90.82182774490467, 'r_mean': 93.88231426692965}
+{'txt_r1': 92.1, 'txt_r5': 99.2, 'txt_r10': 99.9, 'txt_r_mean': 97.06666666666668, 'img_r1': 79.2, 'img_r5': 95.58, 'img_r10': 97.86, 'img_r_mean': 90.88, 'r_mean': 93.97333333333333}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.037', 'train_loss_ita': '0.012', 'train_loss_kd': '0.025', 'val_txt_r1': 91.91321499013807, 'val_txt_r5': 99.21104536489152, 'val_txt_r10': 99.70414201183432, 'val_txt_r_mean': 96.94280078895464, 'val_img_r1': 79.54635108481263, 'val_img_r5': 95.2268244575937, 'val_img_r10': 97.6923076923077, 'val_img_r_mean': 90.82182774490467, 'val_r_mean': 93.88231426692965, 'test_txt_r1': 92.1, 'test_txt_r5': 99.2, 'test_txt_r10': 99.9, 'test_txt_r_mean': 97.06666666666668, 'test_img_r1': 79.2, 'test_img_r5': 95.58, 'test_img_r10': 97.86, 'test_img_r_mean': 90.88, 'test_r_mean': 93.97333333333333, 'epoch': 9, 'best_epoch': 9}
+Train Epoch: [10]  [  0/283]  eta: 0:06:07  lr: 0.00000067  loss: 0.0289  loss_ita: 0.0046  loss_kd: 0.0243  time: 1.3000  data: 0.4411  max mem: 8983
+Train Epoch: [10]  [ 50/283]  eta: 0:01:44  lr: 0.00000067  loss: 0.0268  loss_ita: 0.0023  loss_kd: 0.0245  time: 0.4290  data: 0.0002  max mem: 8983
+Train Epoch: [10]  [100/283]  eta: 0:01:20  lr: 0.00000067  loss: 0.0394  loss_ita: 0.0155  loss_kd: 0.0239  time: 0.4298  data: 0.0002  max mem: 8983
+Train Epoch: [10]  [150/283]  eta: 0:00:58  lr: 0.00000067  loss: 0.0439  loss_ita: 0.0202  loss_kd: 0.0237  time: 0.4268  data: 0.0001  max mem: 8983
+Train Epoch: [10]  [200/283]  eta: 0:00:36  lr: 0.00000067  loss: 0.0371  loss_ita: 0.0122  loss_kd: 0.0248  time: 0.4286  data: 0.0001  max mem: 8983
+Train Epoch: [10]  [250/283]  eta: 0:00:14  lr: 0.00000067  loss: 0.0278  loss_ita: 0.0047  loss_kd: 0.0231  time: 0.4374  data: 0.0001  max mem: 8983
+Train Epoch: [10]  [282/283]  eta: 0:00:00  lr: 0.00000067  loss: 0.0508  loss_ita: 0.0263  loss_kd: 0.0245  time: 0.4356  data: 0.0002  max mem: 8983
+Train Epoch: [10] Total time: 0:02:03 (0.4352 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0357  loss_ita: 0.0113  loss_kd: 0.0244
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 91.12426035502959, 'txt_r5': 99.30966469428007, 'txt_r10': 99.90138067061145, 'txt_r_mean': 96.7784352399737, 'img_r1': 79.54635108481263, 'img_r5': 95.38461538461539, 'img_r10': 97.81065088757397, 'img_r_mean': 90.91387245233399, 'r_mean': 93.84615384615384}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.036', 'train_loss_ita': '0.011', 'train_loss_kd': '0.024', 'val_txt_r1': 91.12426035502959, 'val_txt_r5': 99.30966469428007, 'val_txt_r10': 99.90138067061145, 'val_txt_r_mean': 96.7784352399737, 'val_img_r1': 79.54635108481263, 'val_img_r5': 95.38461538461539, 'val_img_r10': 97.81065088757397, 'val_img_r_mean': 90.91387245233399, 'val_r_mean': 93.84615384615384, 'test_txt_r1': 92.1, 'test_txt_r5': 99.2, 'test_txt_r10': 99.9, 'test_txt_r_mean': 97.06666666666668, 'test_img_r1': 79.2, 'test_img_r5': 95.58, 'test_img_r10': 97.86, 'test_img_r_mean': 90.88, 'test_r_mean': 93.97333333333333, 'epoch': 10, 'best_epoch': 9}
+Train Epoch: [11]  [  0/283]  eta: 0:06:21  lr: 0.00000017  loss: 0.0300  loss_ita: 0.0050  loss_kd: 0.0250  time: 1.3466  data: 0.5754  max mem: 8983
+Train Epoch: [11]  [ 50/283]  eta: 0:01:45  lr: 0.00000017  loss: 0.0260  loss_ita: 0.0023  loss_kd: 0.0237  time: 0.4381  data: 0.0002  max mem: 8983
+Train Epoch: [11]  [100/283]  eta: 0:01:20  lr: 0.00000017  loss: 0.0247  loss_ita: 0.0011  loss_kd: 0.0236  time: 0.4299  data: 0.0002  max mem: 8983
+Train Epoch: [11]  [150/283]  eta: 0:00:58  lr: 0.00000017  loss: 0.0344  loss_ita: 0.0108  loss_kd: 0.0236  time: 0.4276  data: 0.0002  max mem: 8983
+Train Epoch: [11]  [200/283]  eta: 0:00:36  lr: 0.00000017  loss: 0.0256  loss_ita: 0.0010  loss_kd: 0.0246  time: 0.4282  data: 0.0002  max mem: 8983
+Train Epoch: [11]  [250/283]  eta: 0:00:14  lr: 0.00000017  loss: 0.0351  loss_ita: 0.0118  loss_kd: 0.0234  time: 0.4307  data: 0.0002  max mem: 8983
+Train Epoch: [11]  [282/283]  eta: 0:00:00  lr: 0.00000017  loss: 0.0429  loss_ita: 0.0183  loss_kd: 0.0246  time: 0.4320  data: 0.0002  max mem: 8983
+Train Epoch: [11] Total time: 0:02:02 (0.4345 s / it)
+Averaged stats: lr: 0.0000  loss: 0.0355  loss_ita: 0.0113  loss_kd: 0.0242
+Computing features for evaluation...
+Computing features for evaluation...
+{'txt_r1': 92.01183431952663, 'txt_r5': 99.5069033530572, 'txt_r10': 99.90138067061145, 'txt_r_mean': 97.14003944773175, 'img_r1': 79.72386587771203, 'img_r5': 95.54240631163708, 'img_r10': 97.94871794871794, 'img_r_mean': 91.07166337935568, 'r_mean': 94.10585141354372}
+{'txt_r1': 92.1, 'txt_r5': 99.7, 'txt_r10': 99.8, 'txt_r_mean': 97.2, 'img_r1': 79.6, 'img_r5': 95.74, 'img_r10': 98.0, 'img_r_mean': 91.11333333333333, 'r_mean': 94.15666666666667}
+LOG:  {'train_lr': '0.000', 'train_loss': '0.035', 'train_loss_ita': '0.011', 'train_loss_kd': '0.024', 'val_txt_r1': 92.01183431952663, 'val_txt_r5': 99.5069033530572, 'val_txt_r10': 99.90138067061145, 'val_txt_r_mean': 97.14003944773175, 'val_img_r1': 79.72386587771203, 'val_img_r5': 95.54240631163708, 'val_img_r10': 97.94871794871794, 'val_img_r_mean': 91.07166337935568, 'val_r_mean': 94.10585141354372, 'test_txt_r1': 92.1, 'test_txt_r5': 99.7, 'test_txt_r10': 99.8, 'test_txt_r_mean': 97.2, 'test_img_r1': 79.6, 'test_img_r5': 95.74, 'test_img_r10': 98.0, 'test_img_r_mean': 91.11333333333333, 'test_r_mean': 94.15666666666667, 'epoch': 11, 'best_epoch': 11}
+Training time 0:30:35

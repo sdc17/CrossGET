@@ -1,0 +1,26 @@
+# image_root: '/export/share/datasets/vision/flickr30k/'
+image_root: 'datasets/vision/flickr/'
+ann_root: 'annotation'
+dataset: 'flickr'
+
+# set pretrained as a file path or an url
+# pretrained: 'clip/ViT-B-16.pt'
+pretrained: 'output/finetune_retrieval_flickr_clip/checkpoint_best.pth'
+
+# init_lr: 1e-6 # for finetune
+init_lr: 1e-5
+# batch_size_train: 32
+# batch_size_test: 64
+batch_size_train: 64
+batch_size_test: 128
+
+image_size: 224
+queue_size: 57600
+alpha: 0.4
+
+# optimizer
+weight_decay: 0.05
+# weight_decay: 0.002
+min_lr: 0
+# max_epoch: 6
+max_epoch: 12

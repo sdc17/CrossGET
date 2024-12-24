@@ -1,0 +1,13 @@
+output
+__pycache__/
+pretrained
+annotation
+datasets
+env.sh
+kill.sh
+srun*
+__pycache__backup/
+.history/
+.vscode
+*.pt
+kill.sh
