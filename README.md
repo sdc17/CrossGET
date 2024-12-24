@@ -117,12 +117,12 @@ conda env create -f environment.yml
     Image to Text (Flickr30k) | Recall@1 | Recall5 | Recall@10 
     --- | :---: | :---: | :---: 
     CLIP | 92.1 | 99.1 | 99.7 
-    w/ CrossGET (~1.6x Tput) | 92.1 | 99.7 | 99.8
+    w/ CrossGET (~58% GFLOPs) | 92.1 | 99.7 | 99.8
 
     Text to Image (Flickr30k) | Recall@1 | Recall5 | Recall@10 
     --- | :---: | :---: | :---: 
     CLIP | 79.3 | 95.7 | 98.0
-    w/ CrossGET (~1.6x Tput) | 79.6 | 95.7 | 98.0
+    w/ CrossGET (~58% GFLOPs) | 79.6 | 95.7 | 98.0
    
 
 ### 📚 Fine-tuning
@@ -135,11 +135,28 @@ conda env create -f environment.yml
     --- | :---: 
     CLIP | [Google Drive](https://drive.google.com/drive/folders/120n9RWZ0Ir8vzHP2Zd7b-6xJ-e5WxmFC?usp=sharing)
    
-4. Use the following script to evaluate. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
+4. Use the following script to fine-tuning. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
 
     ```bash
+    # Vision-only
     python -W ignore -m torch.distributed.run --nproc_per_node=8 train_retrieval_clip.py \
     --config ./configs/retrieval_flickr_clip.yaml --lr 1e-5 --epoch 12 --reduce ours --rv 16 --rl 0 \
+    --pretrained output/finetune_retrieval_flickr_clip/checkpoint_best.pth \
+    --output_dir output/train_retrieval_flickr_clip_ours
+    ```
+
+    ```bash
+    # Language-only
+    python -W ignore -m torch.distributed.run --nproc_per_node=8 train_retrieval_clip.py \
+    --config ./configs/retrieval_flickr_clip.yaml --lr 1e-5 --epoch 12 --reduce ours --rv 0 --rl 6 \
+    --pretrained output/finetune_retrieval_flickr_clip/checkpoint_best.pth \
+    --output_dir output/train_retrieval_flickr_clip_ours
+    ```
+
+    ```bash
+    # Vision and Language
+    python -W ignore -m torch.distributed.run --nproc_per_node=8 train_retrieval_clip.py \
+    --config ./configs/retrieval_flickr_clip.yaml --lr 1e-5 --epoch 12 --reduce ours --rv 16 --rl 6 \
     --pretrained output/finetune_retrieval_flickr_clip/checkpoint_best.pth \
     --output_dir output/train_retrieval_flickr_clip_ours
     ```
