@@ -30,15 +30,17 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
     LLaVA-1.5-7B with CrossGET | [Google Drive](https://drive.google.com/drive/folders/1E1Qegfy1yeBUwX6rXW6q6kakb3VPtXxU?usp=sharing)
     LLaVA-1.5-13B with CrossGET | [Google Drive](https://drive.google.com/drive/folders/1EjL-u602_DBLhT9mmfgJj_0uCyQRz8YX?usp=sharing)
 
-4. Use scripts under [LLaVA/scripts/v1_5/eval](https://github.com/sdc17/CrossGET/tree/main/LLaVA/scripts/v1_5/eval) and follow instructions [here](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md) for evaluation.
+4. Use scripts under [LLaVA/scripts/v1_5/eval](https://github.com/sdc17/CrossGET/tree/main/LLaVA/scripts/v1_5/eval) and follow instructions [here](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md) for evaluation. Logs are provided under [LLaVA/log](https://github.com/sdc17/CrossGET/tree/main/LLaVA/log).
 
     Dataset | VQAv2 | GQA | VisWiz | SQA^I | VQA^T | POPE | MME | MMB | MMB^CN | SEED^I
     --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
-    LLaVA-1.5-7B w/ CrossGET | 77.3 | 61.4 | 47.7 | 66.7 | 54.9 | 83.9 | 1510.2 | 64.7 | 55.2 | 64.4
+    LLaVA-1.5-7B | 78.5 | 62.0 | 50.0 | 66.8 | 58.2 | 85.9 | 1510.7 | 64.3 | 58.3 | 66.2
+    w/ CrossGET (~1.9x Tput) | 77.3 | 61.4 | 47.7 | 66.7 | 54.9 | 83.9 | 1510.2 | 64.7 | 55.2 | 64.4
     
     Dataset | VQAv2 | GQA | VisWiz | SQA^I | VQA^T | POPE | MME | MMB | MMB^CN | SEED^I
     --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
-    LLaVA-1.5-13B w/ CrossGET | 78.7 | 62.6 | 51.8 | 71.4 | 58.0 | 84.9 | 1548.8 | 66.3 | 62.0 | 67.5
+    LLaVA-1.5-13B | 80.0 | 63.3 | 53.6 | 71.6 | 61.3 | 85.9 | 1531.3 | 67.7 | 63.6 | 68.2
+    w/ CrossGET (~2.0x Tput) | 78.7 | 62.6 | 51.8 | 71.4 | 58.0 | 84.9 | 1548.8 | 66.3 | 62.0 | 67.5
 
 ### 📚 Visual Instruction Tuning
 
@@ -46,6 +48,7 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
 2. Follow instructions [here](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#visual-instruction-tuning) for preparing datasets.
 3. Run `python LLaVA/scripts/construct_dataset.py` to create 'llava_v1_5_mix67k.json'.
 4. Follow instructions [here](https://github.com/haotian-liu/LLaVA/tree/main?tab=readme-ov-file#visual-instruction-tuning) for visual instruction tuning. For example, use [LLaVA/scripts/v1_5/finetune_task.sh](https://github.com/sdc17/CrossGET/blob/main/LLaVA/scripts/v1_5/finetune_task.sh)
+
     ```bash
     #!/bin/bash
     

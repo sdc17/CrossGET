@@ -1,0 +1,15 @@
+Scene Understanding: 74.86%
+Instance Identity: 70.02%
+Instance Attributes: 67.93%
+Instance Location: 61.96%
+Instances Counting: 61.01%
+Spatial Relation: 50.84%
+Instance Interaction: 69.07%
+Visual Reasoning: 76.74%
+Text Understanding: 63.53%
+Action Recognition: 0.00%
+Action Prediction: 0.00%
+Procedure Understanding: 0.00%
+Total accuracy: 49.95%
+image accuracy: 67.53%
+video accuracy: 0.00%

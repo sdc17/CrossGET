@@ -5,8 +5,6 @@ __pycache__
 dist
 
 # Log
-*.log
-*.log.*
 *.json
 *.jsonl
 
@@ -38,5 +36,4 @@ playground
 .history
 srun_*
 kill.sh
-log
 checkpoints
