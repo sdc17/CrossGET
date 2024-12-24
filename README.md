@@ -135,7 +135,7 @@ conda env create -f environment.yml
     --- | :---: 
     CLIP | [Google Drive](https://drive.google.com/drive/folders/120n9RWZ0Ir8vzHP2Zd7b-6xJ-e5WxmFC?usp=sharing)
    
-4. Use the following script to fine-tuning. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
+4. Use the following scripts to fine-tuning. Logs are provided under [CLIP/log](https://github.com/sdc17/CrossGET/tree/main/CLIP/log).
 
     ```bash
     # Vision-only
