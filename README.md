@@ -99,7 +99,7 @@ conda env create -f environment.yml
 
 1. Download the [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/) dataset, unzip it under the `datasets` folder, and accordingly modify the `image_root` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
 2. Download annotations from [Google Drive](https://drive.google.com/uc?export=download&id=19Vk07K3DbQYa68DipJ4dFNcF0_Br7cmD) or [Baidu Drive](https://pan.baidu.com/s/1lJbfCsXqszmaTvxrpt7-xQ?pwd=1c2i), unzip it under the `annotation` folder, and accordingly modify the `annotation` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
-3. Download following checkpoints and put them under `output/`.
+3. Download the following checkpoint and put it under `output/`.
 
     Model | Link | 
     --- | :---: 
@@ -129,7 +129,7 @@ conda env create -f environment.yml
 
 1. Download the [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/) dataset, unzip it under the `datasets` folder, and accordingly modify the `image_root` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
 2. Download annotations from [Google Drive](https://drive.google.com/uc?export=download&id=19Vk07K3DbQYa68DipJ4dFNcF0_Br7cmD) or [Baidu Drive](https://pan.baidu.com/s/1lJbfCsXqszmaTvxrpt7-xQ?pwd=1c2i), unzip it under the `annotation` folder, and accordingly modify the `annotation` in [config](https://github.com/sdc17/CrossGET/blob/main/CLIP/configs/retrieval_flickr_clip.yaml).
-3. Download following checkpoints and put them under `output/`.
+3. Download the following checkpoint and put it under `output/`.
 
     Model | Link | 
     --- | :---: 
