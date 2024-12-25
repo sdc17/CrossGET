@@ -13,7 +13,7 @@
 
 ## On LLaVA-1.5
 
-### 🏃 Installation
+### ⚙️ Installation
 The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Please follow [LLaVA-1.5](https://github.com/haotian-liu/LLaVA?tab=readme-ov-file#install) to install other dependencies.
 
 ### 📑 Evaluation
@@ -89,7 +89,7 @@ The code is tested on `Pytorch==2.1.1`, `cuda==12.1`, and `python==3.10.13`. Ple
 
 ## On CLIP
 
-### 🏃 Installation
+### ⚙️ Installation
 The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.16`. The dependencies can be installed by:
 ```
 conda env create -f environment.yml
@@ -160,9 +160,78 @@ conda env create -f environment.yml
     --pretrained output/finetune_retrieval_flickr_clip/checkpoint_best.pth \
     --output_dir output/train_retrieval_flickr_clip_ours
     ```
-    
+
+---
+
+
+## On CoOp Benchmark
+
+### ⚙️ Installation
+The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.17`. Please follow [CoOp](https://github.com/KaiyangZhou/CoOp?tab=readme-ov-file#how-to-install) to install other dependencies.
+
+### 📑 Evaluation
+
+1. Prepare datasets following instructions [here](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
+2. Download checkpoints ending **without** `_original` from the follow link and put them under `output/`. Logs are also provided in the same link.
+
+    Model | Link | 
+    --- | :---: 
+    CoOp with CrossGET | [Google Drive](https://drive.google.com/drive/folders/1-j_ardAxXow9wrCbhGon-YNiOM-AOOgL?usp=sharing)
+
+3. Adjust `model-dir` in [CoOp/eval.sh](https://github.com/sdc17/CrossGET/blob/main/CoOp/eval.sh) accordingly.
+4. Use the following script to evaluate.
+
+    ```bash
+    # 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
+    ./eval.sh stanford_cars vit_b16 ours 16 0 
+    ./eval.sh oxford_flowers vit_b16 ours 16 0 
+    ./eval.sh food101 vit_b16 ours 16 0 
+    ./eval.sh fgvc_aircraft vit_b16 ours 16 0 
+    ./eval.sh sun397 vit_b16 ours 16 0 
+    ./eval.sh dtd vit_b16 ours 16 0 
+    ./eval.sh eurosat vit_b16 ours 16 0 
+    ./eval.sh ucf101 vit_b16 ours 16 0 
+    ./eval.sh caltech101 vit_b16 ours 16 0 
+    ./eval.sh oxford_pets vit_b16 ours 16 0 
+    ./eval.sh imagenet vit_b16_ep50 ours 16 0 
+    ```
+
+    Dataset | ImageNet | Caltech101 | OxfordPets | StanfordCars | Flowers102 | Food101 | FGVCAircraft | SUN397 | DTD | EuroSAT | UCF101 | Average
+    --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: 
+    CoOp | 71.1 | 95.4 | 93.3 | 77.5 | 95.6 | 86.5 | 37.3 | 75.1 | 65.8 | 82.6 | 83.7 | 78.5 
+    w/ CrossGET (~80% GFLOPs) | 70.8 | 94.6 | 90.8 | 81.9 | 95.8 | 82.0 | 43.7 | 74.1 | 65.7 | 88.4 | 82.2 | 79.1
+    w/ CrossGET (~69% GFLOPs) | 70.2 | 94.9 | 90.1 | 81.1 | 95.0 | 81.5 | 43.1 | 73.5 | 65.9 | 86.9 | 81.9 | 78.6
+    w/ CrossGET (~58% GFLOPs) | 67.6 | 93.9 | 89.5 | 76.6 | 93.3 | 79.7 | 41.3 | 72.1 | 64.2 | 84.5 | 80.5 | 76.7
+
+### 📚 Prompt Tuning
+
+1. Prepare datasets following instructions [here](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
+2. Download checkpoints ending **with** `_original` from the follow link and put them under `output/`. Logs are also provided in the same link.
+
+    Model | Link | 
+    --- | :---: 
+    CoOp | [Google Drive](https://drive.google.com/drive/folders/1-j_ardAxXow9wrCbhGon-YNiOM-AOOgL?usp=sharing)
+
+3. Adjust `model-dir` in [CoOp/train.sh](https://github.com/sdc17/CrossGET/blob/main/CoOp/train.sh) accordingly.
+4. Use the following scripts to prompt tuning.
+
+    ```bash
+    # 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
+    ./train.sh stanford_cars vit_b16 end 16 16 False ours 16 0
+    ./train.sh oxford_flowers vit_b16 end 16 16 False ours 16 0
+    ./train.sh food101 vit_b16 end 16 16 False ours 16 0
+    ./train.sh fgvc_aircraft vit_b16 end 16 16 False ours 16 0
+    ./train.sh sun397 vit_b16 end 16 16 False ours 16 0
+    ./train.sh dtd vit_b16 end 16 16 False ours 16 0
+    ./train.sh eurosat vit_b16 end 16 16 False ours 16 0
+    ./train.sh ucf101 vit_b16 end 16 16 False ours 16 0
+    ./train.sh caltech101 vit_b16 end 16 16 False ours 16 0
+    ./train.sh oxford_pets vit_b16 end 16 16 False ours 16 0
+    ./train.sh imagenet vit_b16_ep50 end 16 16 False ours 16 0
+    ```
+
 ## 💬 Acknowledgments
-This code is built upon <a href="https://github.com/haotian-liu/LLaVA">LLaVA</a>, <a href="https://github.com/facebookresearch/ToMe">ToMe</a>, <a href="https://github.com/sdc17/UPop">UPop</a>, and <a href="https://github.com/salesforce/BLIP">BLIP</a>. Thanks for these awesome open-source projects!
+This code is built upon <a href="https://github.com/haotian-liu/LLaVA">LLaVA</a>, <a href="https://github.com/facebookresearch/ToMe">ToMe</a>, <a href="https://github.com/sdc17/UPop">UPop</a>, <a href="https://github.com/salesforce/BLIP">BLIP</a>, and <a href="https://github.com/KaiyangZhou/CoOp">CoOp</a>. Thanks for these awesome open-source projects!
 
 
 ## ✨ Citation
