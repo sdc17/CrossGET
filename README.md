@@ -172,17 +172,17 @@ The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.17`. Plea
 ### 📑 Evaluation
 
 1. Prepare datasets following instructions [here](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
-2. Download checkpoints ending **without** `_original` from the follow link and put them under `output/`. Logs are also provided in the same link.
+2. Download checkpoints ending **without** `_original` from the following link and put them under `output/`. Logs are also provided in the same link.
 
     Model | Link | 
     --- | :---: 
     CoOp with CrossGET | [Google Drive](https://drive.google.com/drive/folders/1-j_ardAxXow9wrCbhGon-YNiOM-AOOgL?usp=sharing)
 
 3. Adjust `model-dir` in [CoOp/eval.sh](https://github.com/sdc17/CrossGET/blob/main/CoOp/eval.sh) accordingly.
-4. Use the following script to evaluate.
+4. Use the following scripts to evaluate.
 
     ```bash
-    # 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
+    # Second last parameter: 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
     ./eval.sh stanford_cars vit_b16 ours 16 0 
     ./eval.sh oxford_flowers vit_b16 ours 16 0 
     ./eval.sh food101 vit_b16 ours 16 0 
@@ -206,7 +206,7 @@ The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.17`. Plea
 ### 📚 Prompt Tuning
 
 1. Prepare datasets following instructions [here](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md).
-2. Download checkpoints ending **with** `_original` from the follow link and put them under `output/`. Logs are also provided in the same link.
+2. Download checkpoints ending **with** `_original` from the following link and put them under `output/`. Logs are also provided in the same link.
 
     Model | Link | 
     --- | :---: 
@@ -216,7 +216,7 @@ The code is tested on `Pytorch==2.0.0`, `cuda==11.7`, and `python==3.9.17`. Plea
 4. Use the following scripts to prompt tuning.
 
     ```bash
-    # 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
+    # Second last parameter: 16 for ~58% GFLOPs, 12 for ~69% GFLOPs, and 8 for ~80% GFLOPs
     ./train.sh stanford_cars vit_b16 end 16 16 False ours 16 0
     ./train.sh oxford_flowers vit_b16 end 16 16 False ours 16 0
     ./train.sh food101 vit_b16 end 16 16 False ours 16 0
