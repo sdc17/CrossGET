@@ -8,9 +8,12 @@
     </a>
     <a href="https://arxiv.org/abs/2305.17455">
         <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-2301.13741-B31B1B?logo=arxiv" />
-    </a>
+    </a><br>
+    On <a href="#on-llava-15"> LLaVA-1.5</a> | <a href="#on-clip"> CLIP</a> | <a href="#on-coop-benchmark"> CoOp</a>
 </p>
 
+
+  
 ## On LLaVA-1.5
 
 ### ⚙️ Installation
